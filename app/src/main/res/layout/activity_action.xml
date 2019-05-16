@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlack"
+    tools:context=".view_play.ActionActivity">
+
+    <Button
+        android:id="@+id/harvestAnimalButton"
+        android:layout_width="129dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/button_action"
+        android:onClick="actionButtonPressed"
+        android:text="@string/harvest_food"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/getFirewoodButton"
+        android:layout_width="134dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/button_action"
+        android:onClick="actionButtonPressed"
+        android:text="@string/get_firewood"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/harvestAnimalButton" />
+
+    <Button
+        android:id="@+id/collectWaterButton"
+        android:layout_width="134dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/button_action"
+        android:onClick="actionButtonPressed"
+        android:text="@string/collect_water"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.942"
+        app:layout_constraintStart_toEndOf="@+id/getFirewoodButton"
+        app:layout_constraintTop_toBottomOf="@+id/pickPlantButton" />
+
+    <Button
+        android:id="@+id/eatFoodButton"
+        android:layout_width="118dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="292dp"
+        android:background="@drawable/button_action"
+        android:onClick="actionButtonPressed"
+        android:text="@string/eat_food"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/startFireButton"
+        android:layout_width="96dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="188dp"
+        android:background="@drawable/button_action"
+        android:onClick="actionButtonPressed"
+        android:text="@string/start_fire"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/drinkWaterButton"
+        app:layout_constraintHorizontal_bias="0.168"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/drinkWaterButton"
+        android:layout_width="105dp"
+        android:layout_height="73dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="188dp"
+        android:background="@drawable/button_action"
+        android:onClick="actionButtonPressed"
+        android:text="@string/drink_water"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/pickPlantButton"
+        android:layout_width="131dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="77dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/button_action"
+        android:onClick="actionButtonPressed"
+        android:text="@string/pick_plant"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/harvestAnimalButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/lookButton"
+        android:layout_width="120dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="148dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/button_action"
+        android:onClick="actionButtonPressed"
+        android:text="@string/look"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eatFoodButton" />
+</androidx.constraintlayout.widget.ConstraintLayout>

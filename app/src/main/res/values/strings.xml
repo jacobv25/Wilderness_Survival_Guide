@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">FinalProjectTest</string>
+    <string name="north_button">N</string>
+    <string name="south_button">S</string>
+    <string name="east_button">E</string>
+    <string name="west_button">W</string>
+    <string name="action_button">ACTION</string>
+    <string name="inventory_button">ITEMS</string>
+    <string name="look_button">LOOK</string>
+    <string name="harvest_food">SEARCH\nFOR FOOD</string>
+    <string name="collect_water">SEARCH\nFOR WATER</string>
+    <string name="get_firewood">COLLECT\nFIREWOOD</string>
+    <string name="eat_food">Eat Food</string>
+    <string name="start_fire">Start Fire</string>
+    <string name="drink_water">Drink Water</string>
+    <string name="play_game">Play</string>
+    <string name="learn_more">Learn More</string>
+    <string name="pick_plant">PICK PLANT</string>
+    <string name="harvest_animal">Harvest Animal</string>
+    <string name="player">Player</string>
+    <string name="title_activity_player">PlayerActivity</string>
+    <string name="time_button">Time</string>
+    <string name="animals">Animals</string>
+    <string name="plants">Plants</string>
+    <string name="survival_tips">Survival Tips</string>
+    <string name="look">Look</string>
+    <string name="details_name_text_view">Name</string>
+    <string name="details_description_text_view">Description</string>
+    <string name="learn_more_title_text_view">Learn More</string>
+    <string name="death_screen">You Are Dead</string>
+
+    <string name="splash_screen_text">Sounds of Hawai\'i</string>
+    <string name="pass_time_button">WAIT</string>
+    <string name="temperature">TEMP</string>
+    <string name="hunger">HUNGER</string>
+    <string name="thirst">THIRST</string>
+    <string name="freezing_alert">FREEZING!</string>
+    <string name="hunger_alert">STARVING!</string>
+    <string name="thirsty_alert">PARCHED!</string>
+    />
+</resources>

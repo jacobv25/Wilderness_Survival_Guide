@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/playActivityLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlack"
+    tools:context=".view_play.PlayActivity">
+
+    <Button
+        android:id="@+id/northButton"
+        android:layout_width="80dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/button_shape_north"
+        android:onClick="movePlayer"
+        android:text="@string/north_button"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toTopOf="@+id/southButton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/westButton"
+        android:layout_width="56dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/button_shape_west"
+        android:onClick="movePlayer"
+        android:text="@string/west_button"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/northButton" />
+
+    <Button
+        android:id="@+id/eastButton"
+        android:layout_width="56dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="84dp"
+        android:background="@drawable/button_shape_east"
+        android:onClick="movePlayer"
+        android:text="@string/east_button"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintStart_toEndOf="@+id/westButton"
+        app:layout_constraintTop_toBottomOf="@+id/northButton" />
+
+    <Button
+        android:id="@+id/southButton"
+        android:layout_width="80dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/button_shape_south"
+        android:onClick="movePlayer"
+        android:text="@string/south_button"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/inventoryButton"
+        android:layout_width="85dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_main_yellow"
+        android:onClick="inventoryButtonPressed"
+        android:text="@string/inventory_button"
+        android:textColor="@color/colorYellow"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/playerConditionTextView"
+        android:layout_width="348dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="8dp"
+        android:outlineSpotShadowColor="@color/colorWhite"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.553"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/actionButton"
+        android:layout_width="85dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button_main_green"
+        android:onClick="actionButtonPressed"
+        android:text="@string/action_button"
+        android:textColor="@color/colorGreen"
+        app:layout_constraintBottom_toTopOf="@+id/inventoryButton"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/currentAreaTextView"
+        android:layout_width="197dp"
+        android:layout_height="157dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="8dp"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.803"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerConditionTextView" />
+
+    <TextView
+        android:id="@+id/timeTextView"
+        android:layout_width="70dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="117dp" />
+
+    <Button
+        android:id="@+id/waitButton"
+        android:layout_width="85dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button_main_red"
+        android:onClick="movePlayer"
+        android:text="@string/pass_time_button"
+        android:textColor="@color/colorRed"
+        app:layout_constraintBottom_toTopOf="@+id/actionButton"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/afflictionTempTextView"
+        android:layout_width="96dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/freezing_alert"
+        android:textColor="@color/colorRed"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tempTextView" />
+
+    <ProgressBar
+        android:id="@+id/playerTempProgressBar"
+        style="?android:progressBarStyleHorizontal"
+        android:layout_width="78dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="8dp"
+        android:progress="100"
+        android:progressDrawable="@drawable/circular_progress_bar_white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tempTextView" />
+
+    <ProgressBar
+        android:id="@+id/playerHungerProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="78dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="8dp"
+        android:progress="100"
+        android:progressDrawable="@drawable/circular_progress_bar_white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hungerTextView" />
+
+    <ProgressBar
+        android:id="@+id/playerThirstProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="78dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="8dp"
+        android:progress="100"
+        android:progressDrawable="@drawable/circular_progress_bar_white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/thirstTextView" />
+
+    <TextView
+        android:id="@+id/tempTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="68dp"
+        android:text="@string/temperature"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeTextView" />
+
+    <TextView
+        android:id="@+id/hungerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/hunger"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerTempProgressBar" />
+
+    <TextView
+        android:id="@+id/thirstTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/thirst"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerHungerProgressBar" />
+
+    <TextView
+        android:id="@+id/afflictionThirstTextView"
+        android:layout_width="96dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/thirsty_alert"
+        android:textColor="@color/colorRed"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/thirstTextView" />
+
+    <TextView
+        android:id="@+id/afflictionHungerTextView"
+        android:layout_width="96dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/hunger_alert"
+        android:textColor="@color/colorRed"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hungerTextView" />
+
+    <ProgressBar
+        android:id="@+id/playerConditionProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="355dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
+        android:progress="100"
+        android:progressTint="@color/colorRed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
