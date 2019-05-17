@@ -11,20 +11,15 @@ import android.widget.Button;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.miracosta.finalprojecttest.R;
-import edu.miracosta.finalprojecttest.model.board_game.BoardGame;
 import edu.miracosta.finalprojecttest.model.board_game.BoardPiece;
-import edu.miracosta.finalprojecttest.model.board_game.BoardValues;
 import edu.miracosta.finalprojecttest.model.enviroment.GameTime;
 import edu.miracosta.finalprojecttest.model.enviroment.Item;
-import edu.miracosta.finalprojecttest.view_play.PlayActivity;
 
 import static edu.miracosta.finalprojecttest.MainActivity.RUNNING_GAME_BOARD;
 import static edu.miracosta.finalprojecttest.MainActivity.RUNNING_GAME_START;
-import static edu.miracosta.finalprojecttest.model.player.Action.MTN_BLOCK_ALERT;
 import static edu.miracosta.finalprojecttest.view_play.PlayActivity.EAST;
 import static edu.miracosta.finalprojecttest.view_play.PlayActivity.NORTH;
-import static edu.miracosta.finalprojecttest.view_play.PlayActivity.PASS_TIME;
+import static edu.miracosta.finalprojecttest.view_play.PlayActivity.WAIT;
 import static edu.miracosta.finalprojecttest.view_play.PlayActivity.SOUTH;
 import static edu.miracosta.finalprojecttest.view_play.PlayActivity.WEST;
 
@@ -163,7 +158,7 @@ public class Player implements Parcelable {
                 this.displayText = gameBoard[y + 1][x].getDisplayText();
                 break;
 
-            case PASS_TIME:
+            case WAIT:
                 //pass time and do nothing
                 this.displayText = "You waited where you are and passed time.";
                 time.passTime(GameTime.PASS_LRG);

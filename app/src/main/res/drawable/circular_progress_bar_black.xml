@@ -4,6 +4,7 @@
     android:innerRadiusRatio="4"
     android:thickness="4dp"
     android:useLevel="true"
+    android:visible="true"
     >
     <solid
         android:color="@color/colorBlack" />

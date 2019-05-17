@@ -13,7 +13,10 @@ public class Damage {
 
     public static final double FREEZING_POINT = 32; //32 deg Fahrenheit
     public static final double DEFAULT_HUNGER_DAMAGE = 2;
-    public static final double DEFAULT_CONDITION_DAMAGE = 2.5;
+    public static final double CONDITION_DAMAGE_LARGE = 10;
+    public static final double CONDITION_DAMAGE_MEDIUM = 5;
+    public static final double CONDITION_DAMAGE_SMALL = 2.5;
+    public static final double CONDITION_DAMAGE_TINY = 2.5;
     public static final double DEFAULT_THIRST_DAMAGE = 3;
 
     /**
@@ -22,16 +25,18 @@ public class Damage {
      *
      *  Calculate the Player's hunger, thirst and condition damage
      *
+     *  Calculate the damge based on a small amount of time passing
+     *
      * @param player
      * @param weather
      * @param gameTime
      */
-    public static void damagePlayer(Player player, Weather weather, GameTime gameTime) {
+    public static void damagePlayerSmall(Player player, Weather weather, GameTime gameTime) {
 
         weather.calculateTemp(gameTime);
 
         if (!player.isPlayerInside(RUNNING_GAME_BOARD)) {
-            calcTempDamage(player, weather, gameTime);
+            calcTempDamageSmall(player, weather, gameTime);
         }
             calcHungerDamage(player);
             calcThirstDamage(player);
@@ -49,17 +54,18 @@ public class Damage {
         }
         if (player.getHunger() == 0 || player.getTemperature() == 0 || player.getThirst() == 0) {
 
-            player.setCondition(player.getCondition() - DEFAULT_CONDITION_DAMAGE);
+            player.setCondition(player.getCondition() - CONDITION_DAMAGE_LARGE);
         }
     }
     /**
      *  Checks the current weather and determines the damage to the Player's temperature.
      *  The lower the temperature, the more damage done.
+     *  Calculates based off a small amount of time passing.
      * @param player
      * @param weather
      * @param gameTime
      */
-    private static void calcTempDamage(Player player, Weather weather, GameTime gameTime) {
+    private static void calcTempDamageSmall(Player player, Weather weather, GameTime gameTime) {
 
         double freezingDamage;
         double currentPlayerTemp = player.getTemperature();

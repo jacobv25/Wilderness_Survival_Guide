@@ -2,10 +2,8 @@ package edu.miracosta.finalprojecttest.view_play;
 
 import android.content.ContentResolver;
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -51,7 +49,7 @@ public class PlayActivity extends AppCompatActivity {
     public static final String SOUTH = "S";
     public static final String EAST = "E";
     public static final String WEST = "W";
-    public static final String PASS_TIME = "WAIT";
+    public static final String WAIT = "WAIT";
 
     //public static String DISPLAY_TEXT;
 
@@ -198,7 +196,7 @@ public class PlayActivity extends AppCompatActivity {
     public void movePlayer(View v) {
         String buttonText = ((Button)v).getText().toString();
 
-        if (buttonText.equals(EAST) || buttonText.equals(PASS_TIME) ||
+        if (buttonText.equals(EAST) || buttonText.equals(WAIT) ||
                 buttonText.equals(NORTH) || buttonText.equals(SOUTH) || buttonText.equals(WEST)) {
             //move player
             player.movePlayerBoardPiece(buttonText, player, RUNNING_GAME_BOARD, walkSnowSFXMediaPlayer, allButtons, gameTime);
@@ -210,7 +208,7 @@ public class PlayActivity extends AppCompatActivity {
             Regeneration.regenFromFire(player);
         }
 
-        Damage.damagePlayer(player, weather, gameTime);
+        Damage.damagePlayerSmall(player, weather, gameTime);
         Regeneration.regeneratePlayer(player);
         //check for sunlight
         changeBackground(gameTime);
@@ -282,10 +280,10 @@ public class PlayActivity extends AppCompatActivity {
                     //set the current area text view
                     currentAreaTextView.setText(player.getDisplayText());
                     //check player hp
-                    Damage.damagePlayer(player, weather, gameTime);
+                    Damage.damagePlayerSmall(player, weather, gameTime);
                     Regeneration.regeneratePlayer(player);
                     //pass time
-                    gameTime.passTime(GameTime.PASS_MED);
+                    gameTime.passTime(GameTime.PASS_SML);
                     //check for sunlight
                     changeBackground(gameTime);
                     BoardGame.update();
@@ -315,7 +313,6 @@ public class PlayActivity extends AppCompatActivity {
 
     private void changeBackground(GameTime time) {
 
-        //TODO: FIND OUT HOW TO GET ID FOR LAYOUT
         if (time.getDayTime() >= 1260 || time.getDayTime() < 360 ) {
             Log.i("Jacob", "Changing screen to black");
             playActivityLayout.setBackgroundColor(Color.BLACK);
@@ -324,12 +321,18 @@ public class PlayActivity extends AppCompatActivity {
             tempTextView.setTextColor(Color.WHITE);
             hungerTextView.setTextColor(Color.WHITE);
             thirstTextView.setTextColor(Color.WHITE);
-            playerTempProgressBar.setProgressDrawable(getDrawable(R.drawable.circular_progress_bar_white));
-            playerHungerProgressBar.setProgressDrawable(getDrawable(R.drawable.circular_progress_bar_white));
-            playerThirstProgressBar.setProgressDrawable(getDrawable(R.drawable.circular_progress_bar_white));
 
+            if(player.getTemperature() != 100) {
+                playerTempProgressBar.setProgressDrawable(getDrawable(R.drawable.circular_progress_bar_white));
+            }
+            if (player.getHunger() != 100) {
+                playerHungerProgressBar.setProgressDrawable(getDrawable(R.drawable.circular_progress_bar_white));
+            }
+            if (player.getThirst() != 100) {
+                playerThirstProgressBar.setProgressDrawable(getDrawable(R.drawable.circular_progress_bar_white));
+            }
         }
-        else if (time.getDayTime() >=360 || time.getDayTime() < 720) {
+        else if (time.getDayTime() >=360 || time.getDayTime() < 1260) {
             Log.i("Jacob", "Changing screen to white");
             playActivityLayout.setBackgroundColor(getResources().getColor(R.color.colorGrey));
             currentAreaTextView.setTextColor(Color.BLACK);
@@ -337,21 +340,16 @@ public class PlayActivity extends AppCompatActivity {
             tempTextView.setTextColor(Color.BLACK);
             hungerTextView.setTextColor(Color.BLACK);
             thirstTextView.setTextColor(Color.BLACK);
-            playerTempProgressBar.setProgressDrawable(getDrawable(R.drawable.circular_progress_bar_black));
-            playerHungerProgressBar.setProgressDrawable(getDrawable(R.drawable.circular_progress_bar_black));
-            playerThirstProgressBar.setProgressDrawable(getDrawable(R.drawable.circular_progress_bar_black));
+            if(player.getTemperature() != 100) {
+                playerTempProgressBar.setProgressDrawable(getDrawable(R.drawable.circular_progress_bar_black));
+            }
+            if (player.getHunger() != 100) {
+                playerHungerProgressBar.setProgressDrawable(getDrawable(R.drawable.circular_progress_bar_black));
+            }
+            if (player.getThirst() != 100) {
+                playerThirstProgressBar.setProgressDrawable(getDrawable(R.drawable.circular_progress_bar_black));
+            }
         }
-//        if (time.getDayTime() >= 720 || time.getDayTime() < 1260) {
-//            playActivityLayout.setBackgroundColor(getResources().getColor(R.color.colorBlueSky));
-//            currentAreaTextView.setTextColor(Color.BLACK);
-//            timeTextView.setTextColor(Color.BLACK);
-//            tempTextView.setTextColor(Color.BLACK);
-//            hungerTextView.setTextColor(Color.BLACK);
-//            thirstTextView.setTextColor(Color.BLACK);
-//            playerTempProgressBar.setProgressDrawable(getDrawable(R.drawable.circular_progress_bar_black));
-//            playerHungerProgressBar.setProgressDrawable(getDrawable(R.drawable.circular_progress_bar_black));
-//            playerThirstProgressBar.setProgressDrawable(getDrawable(R.drawable.circular_progress_bar_black));
-//        }
     }
 
     private void playMedia() {
@@ -420,27 +418,26 @@ public class PlayActivity extends AppCompatActivity {
     }
 
     private void setAfflictionText() {
-        Log.i("Jacob", "playerTemp=" + player.getTemperature());
         //Set the Temperature
         if (player.getTemperature() == 0) {
-            Log.i("Jacob", "in the BLOCK");
-            playerTempProgressBar.setVisibility(View.INVISIBLE);
+            //playerTempProgressBar.setVisibility(View.INVISIBLE);
             afflictionTempTextView.setVisibility(View.VISIBLE);
         }
         else {
-            playerTempProgressBar.setVisibility(View.VISIBLE);
+            //playerTempProgressBar.setVisibility(View.VISIBLE);
             afflictionTempTextView.setVisibility(View.INVISIBLE);
+            getDrawable(R.drawable.circular_progress_bar_black).setVisible(true, true);
         }
 
 
         //Set the Hunger
         if (player.getHunger() == 0) {
-            playerHungerProgressBar.setVisibility(View.INVISIBLE);
+            //playerHungerProgressBar.setVisibility(View.INVISIBLE);
             //Log.i("JACOB", "changing hunger progress bar");
             afflictionHungerTextView.setVisibility(View.VISIBLE);
         }
         else {
-            playerHungerProgressBar.setVisibility(View.VISIBLE);
+            //playerHungerProgressBar.setVisibility(View.VISIBLE);
             afflictionHungerTextView.setVisibility(View.INVISIBLE);
         }
 

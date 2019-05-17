@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 import edu.miracosta.finalprojecttest.model.board_game.BoardGame;
 import edu.miracosta.finalprojecttest.model.board_game.BoardPiece;
-import edu.miracosta.finalprojecttest.model.board_game.BoardValues;
 import edu.miracosta.finalprojecttest.model.enviroment.GameTime;
 import edu.miracosta.finalprojecttest.model.enviroment.Weather;
 import edu.miracosta.finalprojecttest.model.player.Action;
@@ -13,7 +12,6 @@ import edu.miracosta.finalprojecttest.model.player.Player;
 import edu.miracosta.finalprojecttest.model.player.Regeneration;
 
 import static edu.miracosta.finalprojecttest.MainActivity.RUNNING_GAME_BOARD;
-import static edu.miracosta.finalprojecttest.MainActivity.RUNNING_GAME_FINISH;
 
 public class ConsoleTester {
 
@@ -69,7 +67,7 @@ public class ConsoleTester {
                 decideAction(input, player, gameTime);
             }
             //calc damage, if any
-            Damage.damagePlayer(player, weather , gameTime);
+            Damage.damagePlayerSmall(player, weather , gameTime);
             //calc regen, if any
             Regeneration.regeneratePlayer(player);
             //display player stats
