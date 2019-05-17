@@ -127,6 +127,7 @@ public class PlayActivity extends AppCompatActivity {
         //playView = findViewById(R.id.constraintLayout);
 
         cabinAmbientMediaPlayer = MediaPlayer.create(this, R.raw.cabin_fire);
+        //cabinAmbientMediaPlayer.start();
         forestDayAmbientMediaPlayer = MediaPlayer.create(this, R.raw.forest_ambient_day);
         forestNightAmbientMediaPlayer = MediaPlayer.create(this, R.raw.forest_ambient_night);
         //cabinAmbientExoPlayer = setUpCabinAmbientExoPlayer();
@@ -147,51 +148,51 @@ public class PlayActivity extends AppCompatActivity {
         //forestNightAmbientMediaPlayer.start();
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        TrackSelector trackSelector = new DefaultTrackSelector();
-        //DefaultRenderersFactory renderersFactory = new DefaultRenderersFactory(this);
-        String application_name = getApplicationInfo().loadLabel(getPackageManager()).toString();
-        DataSource.Factory dataSourceFactory = new DefaultDataSourceFactory(this, Util.getUserAgent(this, application_name));
-        MediaSource audioSource = new ExtractorMediaSource.Factory(dataSourceFactory).createMediaSource(getCabinMp3Uri());
-        cabinAmbientExoPlayer = ExoPlayerFactory.newSimpleInstance(this,
-                                                                    trackSelector);
-        cabinAmbientExoPlayer.prepare(audioSource);
-        cabinAmbientExoPlayer.setPlayWhenReady(true);
-
-//        //Use ExoPlayer Factory to initialize
-//        cabinAmbientExoPlayer = ExoPlayerFactory.newSimpleInstance(this, new DefaultTrackSelector());
-//        //Get application name (label)
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
 //
-//        // Produces DataSource instances through which media data is loaded.
-//        DefaultDataSourceFactory dataSourceFactory = new DefaultDataSourceFactory(this,
-//                Util.getUserAgent(this, application_name));
-//        // This is the MediaSource representing the media to be played.
-//        ExtractorMediaSource cabinAmbientMediaSource = new ExtractorMediaSource.Factory(dataSourceFactory)
-//                .createMediaSource(getCabinMp3Uri());
-//        // Prepare the player with the source.
-//        cabinAmbientExoPlayer.prepare(cabinAmbientMediaSource);
-//
+//        TrackSelector trackSelector = new DefaultTrackSelector();
+//        //DefaultRenderersFactory renderersFactory = new DefaultRenderersFactory(this);
+//        String application_name = getApplicationInfo().loadLabel(getPackageManager()).toString();
+//        DataSource.Factory dataSourceFactory = new DefaultDataSourceFactory(this, Util.getUserAgent(this, application_name));
+//        MediaSource audioSource = new ExtractorMediaSource.Factory(dataSourceFactory).createMediaSource(getCabinMp3Uri());
+//        cabinAmbientExoPlayer = ExoPlayerFactory.newSimpleInstance(this,
+//                                                                    trackSelector);
+//        cabinAmbientExoPlayer.prepare(audioSource);
 //        cabinAmbientExoPlayer.setPlayWhenReady(true);
-//        //forestNightAmbientMediaPlayer.start();
+//
+////        //Use ExoPlayer Factory to initialize
+////        cabinAmbientExoPlayer = ExoPlayerFactory.newSimpleInstance(this, new DefaultTrackSelector());
+////        //Get application name (label)
+////
+////        // Produces DataSource instances through which media data is loaded.
+////        DefaultDataSourceFactory dataSourceFactory = new DefaultDataSourceFactory(this,
+////                Util.getUserAgent(this, application_name));
+////        // This is the MediaSource representing the media to be played.
+////        ExtractorMediaSource cabinAmbientMediaSource = new ExtractorMediaSource.Factory(dataSourceFactory)
+////                .createMediaSource(getCabinMp3Uri());
+////        // Prepare the player with the source.
+////        cabinAmbientExoPlayer.prepare(cabinAmbientMediaSource);
+////
+////        cabinAmbientExoPlayer.setPlayWhenReady(true);
+////        //forestNightAmbientMediaPlayer.start();
+//
+//    }
 
-    }
-
-    private Uri getCabinMp3Uri() {
-
-        //Get the URI
-        Resources res = this.getResources();
-        String uri = ContentResolver.SCHEME_ANDROID_RESOURCE
-                + "://" + res.getResourcePackageName(R.raw.forest_ambient_night)
-                + "/" + res.getResourceTypeName(R.raw.forest_ambient_night)
-                + "/" + res.getResourceEntryName(R.raw.forest_ambient_night);
-
-        return Uri.parse(uri);
-
-
-    }
+//    private Uri getCabinMp3Uri() {
+//
+//        //Get the URI
+//        Resources res = this.getResources();
+//        String uri = ContentResolver.SCHEME_ANDROID_RESOURCE
+//                + "://" + res.getResourcePackageName(R.raw.forest_ambient_night)
+//                + "/" + res.getResourceTypeName(R.raw.forest_ambient_night)
+//                + "/" + res.getResourceEntryName(R.raw.forest_ambient_night);
+//
+//        return Uri.parse(uri);
+//
+//
+//    }
 
     public void movePlayer(View v) {
         String buttonText = ((Button)v).getText().toString();
@@ -279,15 +280,14 @@ public class PlayActivity extends AppCompatActivity {
                     player = data.getParcelableExtra("Player");
                     //set the current area text view
                     currentAreaTextView.setText(player.getDisplayText());
-                    //check player hp
-                    Damage.damagePlayerSmall(player, weather, gameTime);
-                    Regeneration.regeneratePlayer(player);
                     //pass time
                     gameTime.passTime(GameTime.PASS_SML);
                     //check for sunlight
                     changeBackground(gameTime);
                     BoardGame.update();
-
+                    //check player hp
+                    Damage.damagePlayerSmall(player, weather, gameTime);
+                    Regeneration.regeneratePlayer(player);
                     //Check if fire is burning in current area
                     if( Action.isFireBurning(player, RUNNING_GAME_BOARD) ) {
                         Regeneration.regenFromFire(player);

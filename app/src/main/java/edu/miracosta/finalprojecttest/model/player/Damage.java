@@ -1,5 +1,7 @@
 package edu.miracosta.finalprojecttest.model.player;
 
+import android.util.Log;
+
 import edu.miracosta.finalprojecttest.model.enviroment.GameTime;
 import edu.miracosta.finalprojecttest.model.enviroment.Weather;
 
@@ -40,16 +42,12 @@ public class Damage {
     public static void damagePlayerSmall(Player player, Weather weather, GameTime gameTime) {
 
         weather.calculateTemp(gameTime);
-
         if (!player.isPlayerInside(RUNNING_GAME_BOARD)) {
             calcTempDamageSmall(player, weather, gameTime);
         }
-        if (player.getDisplayText() == Player.YOU_WAITED_ALERT){
-            calcHungerDamageWait(player);
-        }
-        else {
-            calcHungerDamageSmall(player);
-        }
+
+        calcHungerDamageSmall(player);
+
         calcThirstDamageSmall(player);
 
         calcConditionDamageSmall(player);
@@ -122,7 +120,7 @@ public class Damage {
      *
      *  Calculate the Player's hunger, thirst and condition damage
      *
-     *  Calculate the damge based on a small amount of time passing
+     *  Calculate the damge based on a large amount of time passing
      *
      * @param player
      * @param weather
@@ -131,11 +129,16 @@ public class Damage {
     public static void damagePlayerLarge(Player player, Weather weather, GameTime gameTime) {
 
         weather.calculateTemp(gameTime);
-
+        Log.i("Jacob", "displaytext=" + player.getDisplayText());
         if (!player.isPlayerInside(RUNNING_GAME_BOARD)) {
             calcTempDamageLarge(player, weather, gameTime);
         }
-        calcHungerDamageLarge(player);
+        if (player.getDisplayText() == Player.YOU_WAITED_ALERT){
+            calcHungerDamageWait(player);
+        }
+        else {
+            calcHungerDamageLarge(player);
+        }
         calcThirstDamageLarge(player);
 
         calcConditionDamageLarge(player);
@@ -143,7 +146,7 @@ public class Damage {
     /**
      *  Checks the current weather and determines the damage to the Player's temperature.
      *  The lower the temperature, the more damage done.
-     *  Calculates based off a small amount of time passing.
+     *  Calculates based off a large amount of time passing.
      * @param player
      * @param weather
      * @param gameTime

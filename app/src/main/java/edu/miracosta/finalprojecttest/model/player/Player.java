@@ -31,9 +31,6 @@ import static edu.miracosta.finalprojecttest.view_play.PlayActivity.WEST;
  */
 public class Player implements Parcelable {
 
-
-    public static final int MAX_VALUE = 100;
-    public static final int MIN_VALUE = 0;
     public static final String YOU_WAITED_ALERT = "You waited and did nothing";
 
     private double condition;
@@ -56,10 +53,10 @@ public class Player implements Parcelable {
 
 
     public Player() {
-        condition = MAX_VALUE;
-        temperature = MAX_VALUE;
-        hunger = MAX_VALUE;
-        thirst = MAX_VALUE;
+        condition = 100;
+        temperature = 100;
+        hunger = 100;
+        thirst = 100;
         x = RUNNING_GAME_START.getX();
         y = RUNNING_GAME_START.getY();
         //inventory = new Inventory();
@@ -80,31 +77,6 @@ public class Player implements Parcelable {
             return true;
         }
         else return false;
-    }
-
-    @Override
-    public String toString() {
-        return "Player{" +
-                "condition=" + condition +
-                ", temperature=" + temperature +
-                ", hunger=" + hunger +
-                ", thirst=" + thirst +
-                ", x=" + x +
-                ", y=" + y +
-                ", isInside=" + isPlayerInside(RUNNING_GAME_BOARD) +
-                '}';
-    }
-
-    /**
-     * toString for the Player's inventory
-     * @return
-     */
-    public String inventoryToString() {
-
-        return "Inventory{" +
-                "firewood=" +  firewood +
-                ", food=" + food +
-                ", water bottle=" + water;
     }
 
     public void movePlayerBoardPiece(String buttonText, Player player, BoardPiece[][] gameBoard,
@@ -391,4 +363,32 @@ public class Player implements Parcelable {
             return new Player[size];
         }
     };
+
+    /**
+     *
+     * @return
+     */
+    @Override
+    public String toString() {
+        return "Player{" +
+                "condition=" + condition +
+                ", temperature=" + temperature +
+                ", hunger=" + hunger +
+                ", thirst=" + thirst +
+                ", x=" + x +
+                ", y=" + y +
+                ", isInside=" + isPlayerInside(RUNNING_GAME_BOARD) +
+                '}';
+    }
+    /**
+     * toString for the Player's inventory
+     * @return
+     */
+    public String inventoryToString() {
+
+        return "Inventory{" +
+                "firewood=" +  firewood +
+                ", food=" + food +
+                ", water bottle=" + water;
+    }
 }

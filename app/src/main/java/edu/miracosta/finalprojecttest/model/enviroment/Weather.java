@@ -8,7 +8,7 @@ package edu.miracosta.finalprojecttest.model.enviroment;
  */
 public class Weather {
 
-    private int temp;
+    private static int temp;
     private int wind;
     private int fog;
 
@@ -18,7 +18,7 @@ public class Weather {
      * @param gameTime
      * @return
      */
-    public int calculateTemp(GameTime gameTime) {
+    public static int calculateTemp(GameTime gameTime) {
 
         //The day gameTime is between: 00:00-04:59
         //                         0min - 299min
