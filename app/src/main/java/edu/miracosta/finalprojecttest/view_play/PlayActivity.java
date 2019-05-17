@@ -208,7 +208,7 @@ public class PlayActivity extends AppCompatActivity {
             Regeneration.regenFromFire(player);
         }
 
-        Damage.damagePlayerSmall(player, weather, gameTime);
+        Damage.damagePlayerLarge(player, weather, gameTime);
         Regeneration.regeneratePlayer(player);
         //check for sunlight
         changeBackground(gameTime);

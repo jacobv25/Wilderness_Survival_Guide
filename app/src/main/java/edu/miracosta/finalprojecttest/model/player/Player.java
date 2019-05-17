@@ -34,7 +34,7 @@ public class Player implements Parcelable {
 
     public static final int MAX_VALUE = 100;
     public static final int MIN_VALUE = 0;
-
+    public static final String YOU_WAITED_ALERT = "You waited and did nothing";
 
     private double condition;
     private double temperature;
@@ -160,7 +160,7 @@ public class Player implements Parcelable {
 
             case WAIT:
                 //pass time and do nothing
-                this.displayText = "You waited where you are and passed time.";
+                this.displayText = YOU_WAITED_ALERT;
                 time.passTime(GameTime.PASS_LRG);
                 break;
 
