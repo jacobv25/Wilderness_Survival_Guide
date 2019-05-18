@@ -72,6 +72,7 @@ public class PlayActivity extends AppCompatActivity {
     private TextView tempTextView;
     private TextView hungerTextView;
     private TextView thirstTextView;
+    private TextView worldTempTextView;
 
     private Player player;
     private GameTime gameTime;
@@ -103,6 +104,7 @@ public class PlayActivity extends AppCompatActivity {
         tempTextView = findViewById(R.id.tempTextView);
         hungerTextView = findViewById(R.id.hungerTextView);
         thirstTextView = findViewById(R.id.thirstTextView);
+        worldTempTextView = findViewById(R.id.worldTempTextView);
         playActivityLayout = findViewById(R.id.playActivityLayout);
         allButtons = new ArrayList<>();
         allButtons.add(northButton);
@@ -127,7 +129,7 @@ public class PlayActivity extends AppCompatActivity {
         //playView = findViewById(R.id.constraintLayout);
 
         cabinAmbientMediaPlayer = MediaPlayer.create(this, R.raw.cabin_fire);
-        //cabinAmbientMediaPlayer.start();
+        cabinAmbientMediaPlayer.start();
         forestDayAmbientMediaPlayer = MediaPlayer.create(this, R.raw.forest_ambient_day);
         forestNightAmbientMediaPlayer = MediaPlayer.create(this, R.raw.forest_ambient_night);
         //cabinAmbientExoPlayer = setUpCabinAmbientExoPlayer();
@@ -142,57 +144,9 @@ public class PlayActivity extends AppCompatActivity {
                 " | Hunger= " + player.getHunger() +
                 " | Thirst= " + player.getThirst());
         timeTextView.setText(gameTime.getDayTimeFormatted());
+        setTemperatureProgressBar(weather);
         currentAreaTextView.setText(StoryElements.HOW_TO_PLAY);
-        //forestDayAmbientMediaPlayer.start();
-        //cabinAmbientExoPlayer.setPlayWhenReady(true);
-        //forestNightAmbientMediaPlayer.start();
     }
-
-//    @Override
-//    protected void onStart() {
-//        super.onStart();
-//
-//        TrackSelector trackSelector = new DefaultTrackSelector();
-//        //DefaultRenderersFactory renderersFactory = new DefaultRenderersFactory(this);
-//        String application_name = getApplicationInfo().loadLabel(getPackageManager()).toString();
-//        DataSource.Factory dataSourceFactory = new DefaultDataSourceFactory(this, Util.getUserAgent(this, application_name));
-//        MediaSource audioSource = new ExtractorMediaSource.Factory(dataSourceFactory).createMediaSource(getCabinMp3Uri());
-//        cabinAmbientExoPlayer = ExoPlayerFactory.newSimpleInstance(this,
-//                                                                    trackSelector);
-//        cabinAmbientExoPlayer.prepare(audioSource);
-//        cabinAmbientExoPlayer.setPlayWhenReady(true);
-//
-////        //Use ExoPlayer Factory to initialize
-////        cabinAmbientExoPlayer = ExoPlayerFactory.newSimpleInstance(this, new DefaultTrackSelector());
-////        //Get application name (label)
-////
-////        // Produces DataSource instances through which media data is loaded.
-////        DefaultDataSourceFactory dataSourceFactory = new DefaultDataSourceFactory(this,
-////                Util.getUserAgent(this, application_name));
-////        // This is the MediaSource representing the media to be played.
-////        ExtractorMediaSource cabinAmbientMediaSource = new ExtractorMediaSource.Factory(dataSourceFactory)
-////                .createMediaSource(getCabinMp3Uri());
-////        // Prepare the player with the source.
-////        cabinAmbientExoPlayer.prepare(cabinAmbientMediaSource);
-////
-////        cabinAmbientExoPlayer.setPlayWhenReady(true);
-////        //forestNightAmbientMediaPlayer.start();
-//
-//    }
-
-//    private Uri getCabinMp3Uri() {
-//
-//        //Get the URI
-//        Resources res = this.getResources();
-//        String uri = ContentResolver.SCHEME_ANDROID_RESOURCE
-//                + "://" + res.getResourcePackageName(R.raw.forest_ambient_night)
-//                + "/" + res.getResourceTypeName(R.raw.forest_ambient_night)
-//                + "/" + res.getResourceEntryName(R.raw.forest_ambient_night);
-//
-//        return Uri.parse(uri);
-//
-//
-//    }
 
     public void movePlayer(View v) {
         String buttonText = ((Button)v).getText().toString();
@@ -203,12 +157,10 @@ public class PlayActivity extends AppCompatActivity {
             player.movePlayerBoardPiece(buttonText, player, RUNNING_GAME_BOARD, walkSnowSFXMediaPlayer, allButtons, gameTime);
             currentAreaTextView.setText(player.getDisplayText());
         }
-
         //Check if fire is burning in current area
         if( Action.isFireBurning(player, RUNNING_GAME_BOARD) ) {
             Regeneration.regenFromFire(player);
         }
-
         Damage.damagePlayerLarge(player, weather, gameTime);
         Regeneration.regeneratePlayer(player);
         //check for sunlight
@@ -218,13 +170,11 @@ public class PlayActivity extends AppCompatActivity {
         //set the affliction text view
         setAfflictionText();
         //update the player condition text view
-        playerConditionTextView.setText("HP= " + player.getCondition() +
-                " | Temp= " + player.getTemperature() +
-                " | Hunger= " + player.getHunger() +
-                " | Thirst= " + player.getThirst());
-        //TODO: Set the player progress bar (Temp)
-        setPlayerProgressBars(player);
+        String thirst = "thirst" + player.getThirst();
+        playerConditionTextView.setText(thirst);
 
+        setPlayerProgressBars(player);
+        setTemperatureProgressBar(weather);
 
         //check if player is dead
         isPlayerDead(player);
@@ -242,6 +192,13 @@ public class PlayActivity extends AppCompatActivity {
         playerHungerProgressBar.setProgress((int)player.getHunger());
         playerThirstProgressBar.setProgress((int)player.getThirst());
         playerConditionProgressBar.setProgress((int)player.getCondition());
+    }
+
+    private void setTemperatureProgressBar(Weather weather) {
+        int temp = weather.getTemp();
+        Log.i("temp", "temp=" + temp);
+        worldTempTextView.setText(String.valueOf(temp));
+
     }
 
 
@@ -301,6 +258,7 @@ public class PlayActivity extends AppCompatActivity {
                             " | Thirst= " + player.getThirst());
                     //update progress bars
                     setPlayerProgressBars(player);
+                    setTemperatureProgressBar(weather);
                     //update the time
                     timeTextView.setText(gameTime.getDayTimeFormatted());
                     //check if player is dead
@@ -321,6 +279,7 @@ public class PlayActivity extends AppCompatActivity {
             tempTextView.setTextColor(Color.WHITE);
             hungerTextView.setTextColor(Color.WHITE);
             thirstTextView.setTextColor(Color.WHITE);
+            worldTempTextView.setTextColor(Color.WHITE);
 
             if(player.getTemperature() != 100) {
                 playerTempProgressBar.setProgressDrawable(getDrawable(R.drawable.circular_progress_bar_white));
@@ -340,6 +299,7 @@ public class PlayActivity extends AppCompatActivity {
             tempTextView.setTextColor(Color.BLACK);
             hungerTextView.setTextColor(Color.BLACK);
             thirstTextView.setTextColor(Color.BLACK);
+            worldTempTextView.setTextColor(Color.BLACK);
             if(player.getTemperature() != 100) {
                 playerTempProgressBar.setProgressDrawable(getDrawable(R.drawable.circular_progress_bar_black));
             }
@@ -398,6 +358,15 @@ public class PlayActivity extends AppCompatActivity {
     private void isPlayerDead(Player player) {
 
         if (player.getCondition() == 0) {
+            if (cabinAmbientMediaPlayer.isPlaying()) {
+                cabinAmbientMediaPlayer.stop();
+            }
+            if (forestDayAmbientMediaPlayer.isPlaying()) {
+                forestDayAmbientMediaPlayer.stop();
+            }
+            if (forestNightAmbientMediaPlayer.isPlaying()) {
+                forestNightAmbientMediaPlayer.stop();
+            }
 
             Intent intent = new Intent(this, EndGameActivity.class);
             intent.putExtra("Player", player);
@@ -453,5 +422,20 @@ public class PlayActivity extends AppCompatActivity {
             playerThirstProgressBar.setVisibility(View.VISIBLE);
             afflictionThirstTextView.setVisibility(View.INVISIBLE);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        if (cabinAmbientMediaPlayer.isPlaying()) {
+            cabinAmbientMediaPlayer.stop();
+        }
+        if (forestDayAmbientMediaPlayer.isPlaying()) {
+            forestDayAmbientMediaPlayer.stop();
+        }
+        if (forestNightAmbientMediaPlayer.isPlaying()) {
+            forestNightAmbientMediaPlayer.stop();
+        }
+        finish();
     }
 }

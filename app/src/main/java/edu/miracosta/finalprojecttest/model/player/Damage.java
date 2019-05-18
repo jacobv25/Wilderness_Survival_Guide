@@ -15,14 +15,14 @@ public class Damage {
 
     public static final double FREEZING_POINT = 32; //32 deg Fahrenheit
 
-    public static final double CONDITION_DAMAGE_FREEZING_SMALL = 10/6;
+    public static final double CONDITION_DAMAGE_FREEZING_SMALL = 1.7;
     public static final double CONDITION_DAMAGE_FREEZING_LARGE = 10;
-    public static final double CONDITION_DAMAGE_HUNGER_SMALL = (.5)/6;
+    public static final double CONDITION_DAMAGE_HUNGER_SMALL = .1;
     public static final double CONDITION_DAMAGE_HUNGER_LARGE = .5;
-    public static final double CONDITION_DAMAGE_THIRST_SMALL = 5/6;
+    public static final double CONDITION_DAMAGE_THIRST_SMALL = .8;
     public static final double CONDITION_DAMAGE_THIRST_LARGE = 5;
     public static final double THIRST_DAMAGE_SMALL = 1;
-    public static final double THIRST_DAMAGE_LARGE = 6;
+    public static final double THIRST_DAMAGE_LARGE = 3;
     public static final double HUNGER_DAMAGE_WAIT = 1;
     public static final double HUNGER_DAMAGE_SMALL = 2;
     public static final double HUNGER_DAMAGE_LARGE = 12;
