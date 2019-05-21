@@ -377,8 +377,17 @@ public class PlayActivity extends AppCompatActivity {
 
     private void didPlayerWin(Player player) {
 
-        if( player.getX() == RUNNING_GAME_FINISH.getX() && player.getY() == RUNNING_GAME_FINISH.getY()) {
+        if( RUNNING_GAME_BOARD[player.getY()][player.getX()] == RUNNING_GAME_FINISH) {
 
+            if (cabinAmbientMediaPlayer.isPlaying()) {
+                cabinAmbientMediaPlayer.stop();
+            }
+            if (forestDayAmbientMediaPlayer.isPlaying()) {
+                forestDayAmbientMediaPlayer.stop();
+            }
+            if (forestNightAmbientMediaPlayer.isPlaying()) {
+                forestNightAmbientMediaPlayer.stop();
+            }
             Intent intent = new Intent(this, EndGameActivity.class);
             intent.putExtra("Player", player);
             intent.putExtra("GameTime", gameTime);

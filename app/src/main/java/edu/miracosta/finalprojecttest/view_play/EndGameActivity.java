@@ -11,6 +11,7 @@ import edu.miracosta.finalprojecttest.R;
 import edu.miracosta.finalprojecttest.model.enviroment.GameTime;
 import edu.miracosta.finalprojecttest.model.player.Player;
 
+import static edu.miracosta.finalprojecttest.MainActivity.RUNNING_GAME_BOARD;
 import static edu.miracosta.finalprojecttest.MainActivity.RUNNING_GAME_FINISH;
 
 public class EndGameActivity extends AppCompatActivity {
@@ -29,7 +30,7 @@ public class EndGameActivity extends AppCompatActivity {
         Player player = intent.getParcelableExtra("Player");
         GameTime gameTime = intent.getParcelableExtra("GameTime");
 
-        if (player.getY()==RUNNING_GAME_FINISH.getY() && player.getX()==RUNNING_GAME_FINISH.getX()) {
+        if (RUNNING_GAME_BOARD[player.getY()][player.getX()] == RUNNING_GAME_FINISH) {
             //set color
             deathTextView.setTextColor(getResources().getColor(R.color.colorBlue));
             deathTextView.setText("You made it safely to the town.\n\nYou survived:\n\n" + gameTime.getTotalTimeFormatted());

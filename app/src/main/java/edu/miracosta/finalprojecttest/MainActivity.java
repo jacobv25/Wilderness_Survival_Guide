@@ -3,7 +3,6 @@ package edu.miracosta.finalprojecttest;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 
@@ -13,8 +12,8 @@ import edu.miracosta.finalprojecttest.model.board_game.BoardPiece;
 import edu.miracosta.finalprojecttest.view_play.PlayActivity;
 
 import static edu.miracosta.finalprojecttest.model.board_game.BoardGame.LEVEL_1;
-import static edu.miracosta.finalprojecttest.model.board_game.LevelOneValues.CABN_7_2;
-import static edu.miracosta.finalprojecttest.model.board_game.LevelOneValues.FNSH_1_6;
+import static edu.miracosta.finalprojecttest.model.board_game.LevelOneValues.CABN_5_2;
+import static edu.miracosta.finalprojecttest.model.board_game.LevelOneValues.FNSH_1_4;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
      * HOW TO: Change the RUNNING_GAME_BOARD and RUNNINGG_GAME_START to change the game board
      */
     public static final BoardPiece[][] RUNNING_GAME_BOARD = LEVEL_1;
-    public static final BoardPiece RUNNING_GAME_START = CABN_7_2;
-    public static final BoardPiece RUNNING_GAME_FINISH = FNSH_1_6;
+    public static final BoardPiece RUNNING_GAME_START = CABN_5_2;
+    public static final BoardPiece RUNNING_GAME_FINISH = FNSH_1_4;
 
     private Button playButton;
     private Button learnMoreButton;
