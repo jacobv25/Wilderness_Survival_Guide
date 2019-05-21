@@ -7,7 +7,7 @@ package edu.miracosta.finalprojecttest.model.board_game;
  *
  * As of 04/21/18, we've only created three test areas to play with
  */
-public class BoardValues {
+public class TestValues {
 
     /**
      * These are the BoardPieces that are initialized to specific values we will come up with.

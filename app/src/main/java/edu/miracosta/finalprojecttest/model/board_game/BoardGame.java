@@ -1,8 +1,8 @@
 package edu.miracosta.finalprojecttest.model.board_game;
 
 import static edu.miracosta.finalprojecttest.MainActivity.RUNNING_GAME_BOARD;
-import static edu.miracosta.finalprojecttest.model.board_game.BoardValues.TEST_1_1;
-import static edu.miracosta.finalprojecttest.model.board_game.BoardValues.TST_STRT;
+import static edu.miracosta.finalprojecttest.model.board_game.TestValues.TEST_1_1;
+import static edu.miracosta.finalprojecttest.model.board_game.TestValues.TST_STRT;
 import static edu.miracosta.finalprojecttest.model.board_game.LevelOneValues.BLCKD_RD;
 import static edu.miracosta.finalprojecttest.model.board_game.LevelOneValues.CABN_5_2;
 import static edu.miracosta.finalprojecttest.model.board_game.LevelOneValues.FNSH_1_4;

@@ -25,7 +25,7 @@ public class ActionTests {
         player.setFood(0);
         System.out.println("player food =" + player.getFood());
         BoardPiece[][] testBoard = GAME_BOARD_PIECES_TEST; //because GAME_BOARD_PIECES_TEST is final, we need a new temp board game
-        Action.harvestAnimal(player, testBoard);
+        Action.harvestAnimal(player, testBoard, null);
         assertEquals(1, player.getFood());
         assertEquals(9, testBoard[player.getX()][player.getY()].getAnimals());
     }
@@ -37,7 +37,7 @@ public class ActionTests {
         player.setY(1);
         player.setPlants(0);
         BoardPiece[][] testBoard = GAME_BOARD_PIECES_TEST; //because GAME_BOARD_PIECES_TEST is final, we need a new temp board game
-        Action.pickPlant(player, testBoard);
+        Action.pickPlant(player, testBoard, null);
         assertEquals(1, player.getPlants());
         assertEquals(9, testBoard[player.getX()][player.getY()].getPlants());
     }
