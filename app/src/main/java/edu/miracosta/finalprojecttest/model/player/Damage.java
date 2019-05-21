@@ -129,7 +129,6 @@ public class Damage {
     public static void damagePlayerLarge(Player player, Weather weather, GameTime gameTime) {
 
         weather.calculateTemp(gameTime);
-        Log.i("Jacob", "displaytext=" + player.getDisplayText());
         if (!player.isPlayerInside(RUNNING_GAME_BOARD)) {
             calcTempDamageLarge(player, weather, gameTime);
         }
