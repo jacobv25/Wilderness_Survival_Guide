@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FinalProjectTest</string>
+    <string name="north_button">N</string>
+    <string name="south_button">S</string>
+    <string name="east_button">E</string>
+    <string name="west_button">W</string>
+    <string name="action_button">Acción</string>
+    <string name="inventory_button">Artículos</string>
+    <string name="look_button">Mira</string>
+    <string name="about_project_description">Este proyecto se realizó en la sala 4803, en MiraCosta College.</string>
+    <string name="about_project">Sobre el proyecto</string>
+    <string name="thirsty_alert">¡Tostado!</string>
+    <string name="hunger_alert">¡MURIENDO DE HAMBRE!</string>
+    <string name="freezing_alert">¡CONGELACIÓN!</string>
+    <string name="thirst">SED</string>
+    <string name="hunger">HAMBRE</string>
+    <string name="temperature">Temperatura</string>
+    <string name="pass_time_button">Espere</string>
+    <string name="splash_screen_text">Guía de supervivencia en el desierto</string>
+    <string name="death_screen">Estás muerto</string>
+    <string name="learn_more_title_text_view">Aprende más</string>
+    <string name="details_description_text_view">Descripción</string>
+    <string name="details_name_text_view">Nombre</string>
+    <string name="look">Mira</string>
+    <string name="survival_tips">Tips de supervivencia</string>
+    <string name="plants">Plantas</string>
+    <string name="animals">Los animales</string>
+    <string name="time_button">Hora</string>
+    <string name="title_activity_player">Actividad del jugador</string>
+    <string name="player">Jugador</string>
+    <string name="harvest_animal">Cosecha de animales</string>
+    <string name="pick_plant">recoger la planta</string>
+    <string name="learn_more">Aprende más</string>
+    <string name="play_game">Jugar</string>
+    <string name="drink_water">Beber agua</string>
+    <string name="start_fire">Iniciar fuego</string>
+    <string name="eat_food">Comer alimentos</string>
+    <string name="harvest_food">Cosecha de alimentos</string>
+    <string name="collect_water">Recoger agua</string>
+    <string name="get_firewood">Conseguir leña</string>
+</resources>

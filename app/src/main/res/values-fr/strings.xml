@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FinalProjectTest</string>
+    <string name="north_button">N</string>
+    <string name="south_button">S</string>
+    <string name="east_button">E</string>
+    <string name="west_button">W</string>
+    <string name="action_button">Action</string>
+    <string name="inventory_button">Articles</string>
+    <string name="look_button">Regardez</string>
+    <string name="harvest_food">Récolte alimentaire</string>
+    <string name="collect_water">Recueillir de l\'eau</string>
+    <string name="get_firewood">Obtenez du bois de chauffage</string>
+    <string name="eat_food">Manger de la nourriture</string>
+    <string name="start_fire">Allumer le feu</string>
+    <string name="drink_water">Eau potable</string>
+    <string name="play_game">Jouer</string>
+    <string name="learn_more">Apprendre encore plus</string>
+    <string name="pick_plant">Choisir une plante</string>
+    <string name="harvest_animal">Animal de récolte</string>
+    <string name="player">Joueur</string>
+    <string name="title_activity_player">Activité du joueur</string>
+    <string name="time_button">Temps</string>
+    <string name="animals">Animaux</string>
+    <string name="plants">Les plantes</string>
+    <string name="survival_tips">Conseils de survie</string>
+    <string name="look">Regardez</string>
+    <string name="details_name_text_view">prénom</string>
+    <string name="details_description_text_view">La description</string>
+    <string name="learn_more_title_text_view">Apprendre encore plus</string>
+    <string name="death_screen">Tu es mort</string>
+    <string name="splash_screen_text">Guide de survie en pleine nature</string>
+    <string name="pass_time_button">ATTENDRE</string>
+    <string name="temperature">TEMPÉRATURE</string>
+    <string name="hunger">FAIM</string>
+    <string name="thirst">LA SOIF</string>
+    <string name="freezing_alert">GEL!</string>
+    <string name="hunger_alert">AFFAMÉ!</string>
+    <string name="thirsty_alert">DESSÉCHÉ!</string>
+    <string name="about_project">A propos du projet</string>
+    <string name="about_project_description">Ce projet a été réalisé dans la salle 4803 du MiraCosta College!</string>
+</resources>
