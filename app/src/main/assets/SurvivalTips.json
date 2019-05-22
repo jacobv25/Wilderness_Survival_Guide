@@ -3,32 +3,32 @@
     {
       "Name": "Finding Resources",
       "Description": "To survive,\r\n you will need all the resources that you can get. Uncontaminated water\r\n is especially important, which you can get from rivers and rain.\r\n Food can be found from animals or from plants that you find, such as amaranth or burdock.\r\n Just be careful of poison from specific plants.",
-      "ImageName": "none"
+      "ImageName": "water.png"
     },
     {
       "Name": "Building Shelter",
       "Description": "You won't always have a shelter to live in. So be prepared to create a tent of some sort, whether it be using some kind of fabric or using wood.",
-      "ImageName": "none"
+      "ImageName": "tent.png"
     },
     {
       "Name": "Weather Preparations",
       "Description": "The weather does what it wants, whenever and wherever. Make sure to bring clothes for when it's hot or cold. If you are resting, be ready to possibly build a fire or dig into soil. It's possible to find cold air when digging into the ground.",
-      "ImageName": "none"
+      "ImageName": "cloud.png"
     },
     {
       "Name": "Survival Kits",
       "Description": "You will never know what you will be affected from, such as getting scratched from a plant and getting infected, or just to purify water. Bring some kind of water purifier, a knife, first aid items, fire starting equipment, blankets, map, and compass just in case.",
-      "ImageName": "none"
+      "ImageName": "firstaid.png"
     },
     {
       "Name": "Know your way to navigate the area",
       "Description": "It's good to have a map, but maps aren't always reliable to use if you don't know the area. Be able to read the sun's movement and a compass to figure out which direction you are going. Locate the Big Dipper in the night sky to find the North Star.",
-      "ImageName": "none"
+      "ImageName": "compass.png"
     },
     {
       "Name": "Building a fire",
       "Description": "You may be able to light a fire with a lighter, but it might not always work. You must be able to gather wood, and be able to build a fire yourself just in case you don't have access to specific materials.",
-      "ImageName": "none"
+      "ImageName": "campfire.png"
     }
   ]
 }
