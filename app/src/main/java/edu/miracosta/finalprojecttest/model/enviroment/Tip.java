@@ -18,7 +18,7 @@ public class Tip
         tipImage = "";
     }
 
-    public Tip(String tipName, String tipsDescription, String tipImage) {
+    public Tip(String tipName, String tipDescription, String tipImage) {
         this.tipName = tipName;
         this.tipDescription = tipDescription;
         this.tipImage = tipImage;

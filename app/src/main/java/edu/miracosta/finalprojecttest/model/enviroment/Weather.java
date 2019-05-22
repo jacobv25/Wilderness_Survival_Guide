@@ -12,6 +12,16 @@ public class Weather {
     private int wind;
     private int fog;
 
+    public Weather() {
+        wind = 0;
+        fog = 0;
+    }
+
+    public Weather(int wind, int fog) {
+        this.wind = wind;
+        this.fog = fog;
+    }
+
     /**
      * The temperature is higher in the afternoon and evening, and cold at night.
      * All depends on the gameTime of day.
