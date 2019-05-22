@@ -7,6 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import edu.miracosta.finalprojecttest.R;
+import edu.miracosta.finalprojecttest.model.GoogleMaps;
 
 
 public class LearnMoreActivity extends AppCompatActivity {
@@ -40,6 +41,12 @@ public class LearnMoreActivity extends AppCompatActivity {
     public void tipsLearnMoreButtonPressed(View v) {
 
         Intent intent = new Intent(this, TipsListActivity.class);
+
+        startActivity(intent);
+    }
+    public void aboutLearnMoreButtonPressed(View v) {
+
+        Intent intent = new Intent(this, GoogleMaps.class);
 
         startActivity(intent);
     }

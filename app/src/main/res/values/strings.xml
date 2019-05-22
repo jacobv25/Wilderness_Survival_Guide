@@ -37,5 +37,7 @@
     <string name="freezing_alert">FREEZING!</string>
     <string name="hunger_alert">STARVING!</string>
     <string name="thirsty_alert">PARCHED!</string>
+    <string name="about_project">About Project</string>
+    <string name="about_project_description">This project was made in Room 4803, at MiraCosta College!</string>
     />
 </resources>

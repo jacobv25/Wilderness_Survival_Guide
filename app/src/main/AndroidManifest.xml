@@ -18,6 +18,7 @@
         <activity android:name=".view_learn_more.ActivityDetails" />
         <activity android:name=".view_learn_more.PlantsListActivity" />
         <activity android:name=".view_learn_more.TipsListActivity" />
+        <activity android:name=".model.GoogleMaps" />
         <activity android:name=".MainActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
@@ -28,6 +29,8 @@
         </activity>
         <activity android:name=".view_play.ActionActivity" />
         <activity android:name=".view_play.PlayActivity" />
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCiXEy_I-OtSSHadDvVaL41RpOCwQaiA6U"/>
     </application>
 
 </manifest>
