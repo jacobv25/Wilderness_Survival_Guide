@@ -1,4 +1,4 @@
-package edu.miracosta.finalprojecttest;
+package edu.miracosta.finalprojecttest.model.player;
 
 import org.junit.Test;
 
