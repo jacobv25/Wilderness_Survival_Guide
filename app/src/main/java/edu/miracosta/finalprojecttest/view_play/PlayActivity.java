@@ -313,7 +313,6 @@ public class PlayActivity extends AppCompatActivity {
     private void changeBackground(GameTime time) {
 
         if (time.getDayTime() >= 1260 || time.getDayTime() < 360 ) {
-            Log.i("Jacob", "Changing screen to black");
             playActivityLayout.setBackgroundColor(Color.BLACK);
             currentAreaTextView.setTextColor(Color.WHITE);
             timeTextView.setTextColor(Color.WHITE);
@@ -333,7 +332,6 @@ public class PlayActivity extends AppCompatActivity {
             }
         }
         else if (time.getDayTime() >=360 || time.getDayTime() < 1260) {
-            Log.i("Jacob", "Changing screen to white");
             playActivityLayout.setBackgroundColor(getResources().getColor(R.color.colorGrey));
             currentAreaTextView.setTextColor(Color.BLACK);
             timeTextView.setTextColor(Color.BLACK);
