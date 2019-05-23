@@ -9,7 +9,7 @@ public class LevelOneValues {
 
     public static BoardPiece STN_FRST = new BoardPiece(1, 0, 0, 0, 0, 0,
             false, false, "Deep foreboding forest.");
-    public static BoardPiece __WELL__ = new BoardPiece(0, 0, 3, 0, 0, 0,
+    public static BoardPiece __WELL__ = new BoardPiece(0, 0, 10, 0, 0, 0,
             false, false, "A deep well containing water.");
     public static BoardPiece HRB_TREE = new BoardPiece(0, 0, 0, 1, 0, 0,
             false, false, "A clearing with a .");
@@ -23,7 +23,7 @@ public class LevelOneValues {
             false, false, "A snowy trail with tall white trees on both sides.");
     public static BoardPiece ROAD_3_3 = new BoardPiece(0, 0, 0, 0, 0, 0,
             false, false, "A road going north-south.\nA car crash lays before you");
-    public static BoardPiece CABN_5_2 = new BoardPiece(2, 0, 0, 0, 5, 2,
+    public static BoardPiece CABN_5_2 = new BoardPiece(10, 0, 0, 0, 5, 2,
             false, true,"You enter a dark wood cabin.\nYou feel safe and warm.");
     public static BoardPiece FNSH_1_4 = new BoardPiece(0, 0, 0, 0, 1, 6,
             false, false, "A cave that cuts through the mountains to a small town.");

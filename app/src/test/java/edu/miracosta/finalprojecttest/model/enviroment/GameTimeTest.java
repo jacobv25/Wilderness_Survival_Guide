@@ -81,7 +81,7 @@ public class GameTimeTest {
     }
 
     //Not sure how the JUnit test works for this one
-    /*
+
     @Test
     public void writeToParcel() {
         GameTime test = new GameTime();
@@ -92,5 +92,5 @@ public class GameTimeTest {
         GameTime createdFromParcel = GameTime.CREATOR.createFromParcel(parcel);
         assertEquals(test, createdFromParcel);
     }
-    */
+
 }

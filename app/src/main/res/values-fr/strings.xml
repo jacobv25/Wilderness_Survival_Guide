@@ -39,4 +39,8 @@
     <string name="thirsty_alert">DESSÉCHÉ!</string>
     <string name="about_project">A propos du projet</string>
     <string name="about_project_description">Ce projet a été réalisé dans la salle 4803 du MiraCosta College!</string>
+    <string name="learn_more_animation_button">Animación</string>
+    <string name="animation_description">L\'oiseau vole!</string>
+    <string name="rotate_picture_button_text">Faire pivoter l\'image</string>
+    <string name="shake_picture_button_text">Secouer l\'image</string>
 </resources>

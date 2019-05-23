@@ -23,7 +23,7 @@ import static edu.miracosta.finalprojecttest.MainActivity.RUNNING_GAME_FINISH;
 public class EndGameActivity extends AppCompatActivity {
 
     /**
-     * Runs method when the activity boots up
+     * Runs method when the activity boots up, and links any views with specific ids
      * @param savedInstanceState - Allows the activity to revert to a previous state
      */
     @Override

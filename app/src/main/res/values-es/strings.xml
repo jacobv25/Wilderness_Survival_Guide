@@ -39,4 +39,8 @@
     <string name="harvest_food">Cosecha de alimentos</string>
     <string name="collect_water">Recoger agua</string>
     <string name="get_firewood">Conseguir leña</string>
+    <string name="learn_more_animation_button">Animación</string>
+    <string name="animation_description">¡El pajaro esta volando!</string>
+    <string name="rotate_picture_button_text">Girar la imagen</string>
+    <string name="shake_picture_button_text">Agitar la imagen</string>
 </resources>

@@ -39,5 +39,9 @@
     <string name="thirsty_alert">PARCHED!</string>
     <string name="about_project">About Project</string>
     <string name="about_project_description">This project was made in Room 4803, at MiraCosta College!</string>
+    <string name="rotate_picture_button_text">Rotate Picture</string>
+    <string name="shake_picture_button_text">Shake Picture</string>
+    <string name="learn_more_animation_button">Animation</string>
+    <string name="animation_description">The bird is flying!</string>
     />
 </resources>

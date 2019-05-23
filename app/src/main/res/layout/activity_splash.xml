@@ -11,7 +11,7 @@
         android:id="@+id/splashTextView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/hawaii_wave"
+        android:background="@drawable/forest"
         android:gravity="bottom|center"
         android:text="@string/splash_screen_text"
         android:textColor="@android:color/white"

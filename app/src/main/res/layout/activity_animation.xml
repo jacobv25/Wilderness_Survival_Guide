@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/activity_animation"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:paddingBottom="@dimen/activity_vertical_margin"
+              android:paddingLeft="@dimen/activity_horizontal_margin"
+              android:paddingRight="@dimen/activity_horizontal_margin"
+              android:paddingTop="@dimen/activity_vertical_margin"
+              tools:context="edu.miracosta.finalprojecttest.view_learn_more.AnimationPicture">
+
+
+    <ImageView
+        android:id="@+id/pictureView"
+        android:layout_width="match_parent"
+        android:layout_height="380dp"
+        android:layout_weight="2"
+        android:adjustViewBounds="true"
+        android:background="@drawable/flyingmountainbird" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:text="@string/animation_description"
+        android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/rotateAnimButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="toggleRotateAnim"
+        android:text="@string/rotate_picture_button_text" />
+
+    <Button
+        android:id="@+id/shakeAnimButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="toggleShakeAnim"
+        android:text="@string/shake_picture_button_text" />
+
+</LinearLayout>

@@ -12,11 +12,19 @@ public class Weather {
     private int wind;
     private int fog;
 
+    /**
+     * Default constructor, in case no parameters are given
+     */
     public Weather() {
         wind = 0;
         fog = 0;
     }
 
+    /**
+     * Full constructor, initializing variables based on the parameters given
+     * @param wind - An integer for the wind within the area
+     * @param fog - An integer for the fog in the area
+     */
     public Weather(int wind, int fog) {
         this.wind = wind;
         this.fog = fog;

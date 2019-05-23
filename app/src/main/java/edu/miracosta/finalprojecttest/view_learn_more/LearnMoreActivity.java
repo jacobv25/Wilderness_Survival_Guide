@@ -19,7 +19,7 @@ public class LearnMoreActivity extends AppCompatActivity {
 
     //TODO: Each button (Animals, Plants, Survival Tips) take the user to its specific List View.
     /**
-     * Runs method when the activity boots up
+     * Runs method when the activity boots up, and links any views with specific ids
      * @param savedInstanceState - Allows the activity to revert to a previous state
      */
     @Override
@@ -72,6 +72,16 @@ public class LearnMoreActivity extends AppCompatActivity {
     public void aboutLearnMoreButtonPressed(View v) {
 
         Intent intent = new Intent(this, GoogleMaps.class);
+
+        startActivity(intent);
+    }
+    /**
+     * Leads to another activity that gives a location of image animation
+     * @param v - The button that was pressed
+     */
+    public void animationLearnMoreButtonPressed(View v) {
+
+        Intent intent = new Intent(this, AnimationPicture.class);
 
         startActivity(intent);
     }
