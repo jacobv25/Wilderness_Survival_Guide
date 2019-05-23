@@ -72,7 +72,7 @@ public class Player implements Parcelable {
     /**
      * If player's xy position is equal to the xy pos of the Cabin,
      * then set isPlayerInside variable to true
-     * @return
+     * @return true if player is in cabin, else false
      */
     public boolean isPlayerInside(BoardPiece[][] gameBoard) {
         if (gameBoard[y][x].isWarmLocation()) {
@@ -83,12 +83,12 @@ public class Player implements Parcelable {
 
     /**
      * Moves the player in a specific direction in the board based on the button pressed
-     * @param buttonText
-     * @param player
-     * @param gameBoard
-     * @param walkingSFX
-     * @param buttonList
-     * @param time
+     * @param buttonText - The text of the button
+     * @param player - The player of the game
+     * @param gameBoard - Gets the position of the gameBoard
+     * @param walkingSFX - audio for walking in the game
+     * @param buttonList - List of buttons associated to player
+     * @param time - In-game timer
      */
     public void movePlayerBoardPiece(String buttonText, Player player, BoardPiece[][] gameBoard,
                                      MediaPlayer walkingSFX, List<Button> buttonList, GameTime time) {
@@ -153,7 +153,7 @@ public class Player implements Parcelable {
 
     /**
      * If the player moves, the buttons are set to be invisible temporarily
-     * @param buttonList
+     * @param buttonList - All the buttons associated to the player
      */
     private void setButtonsInvisibleAfterMove(final List<Button> buttonList) {
 
@@ -271,7 +271,7 @@ public class Player implements Parcelable {
 
     /**
      * Checks that Condition value is between 0 and 100
-     * @param condition
+     * @param condition - The double for the condition variable for the player's health
      */
     public void setCondition(double condition) {
 
@@ -296,7 +296,7 @@ public class Player implements Parcelable {
 
     /**
      * Checks that the temperature remains between 0 and 100
-     * @param temperature
+     * @param temperature - the double to set for the temperature variable
      */
     public void setTemperature(double temperature) {
 
@@ -321,7 +321,7 @@ public class Player implements Parcelable {
 
     /**
      * Makes sure the hunger value stays between 0 and 100
-     * @param hunger
+     * @param hunger - The double to set for the hunger variable
      */
     public void setHunger(double hunger) {
 
@@ -499,7 +499,7 @@ public class Player implements Parcelable {
     }
     /**
      * toString for the Player's inventory
-     * @return
+     * @return A string containing the variables and their values of the inventory
      */
     public String inventoryToString() {
 

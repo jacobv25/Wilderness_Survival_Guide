@@ -76,7 +76,7 @@ public class BoardPiece {
 
     /**
      * A null value indicated there are no active campfires in this area
-     * @return
+     * @return true if campfire exists, else false
      */
     public boolean hasCampfire() {
 

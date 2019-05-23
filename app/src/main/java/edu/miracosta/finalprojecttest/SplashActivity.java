@@ -16,6 +16,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
+    /**
+     * Runs method when the activity boots up
+     * @param savedInstanceState - Allows the activity to revert to a previous state
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

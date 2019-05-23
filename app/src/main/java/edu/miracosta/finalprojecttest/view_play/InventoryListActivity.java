@@ -1,5 +1,9 @@
 package edu.miracosta.finalprojecttest.view_play;
-
+/**
+ * What is used to display a list of item objects within a list.
+ * @author Gabriel Bactol & Jacob Valenzuela
+ * @since 5/22/19
+ */
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,7 +18,11 @@ import edu.miracosta.finalprojecttest.model.player.Player;
 public class InventoryListActivity extends ListActivity {
 
     private List<Item> allItems;
-
+    /**
+     * Runs method when the activity boots up, also where all the buttons are linked
+     * to their ids.
+     * @param savedInstanceState - Allows the activity to revert to a previous state
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

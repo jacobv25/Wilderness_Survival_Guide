@@ -42,7 +42,7 @@ public class Action {
      * Access the xy area the Player is currently at and check the amount of firewood.
      * If the amount is greater than zero, decrement from the ammount and add it to the
      * player's firewood inventory
-     * @param player
+     * @param player - The player playing the game
      */
 
     public static void getFireWood(Player player, BoardPiece[][] boardGame, MediaPlayer mediaPlayer) {
@@ -85,7 +85,7 @@ public class Action {
      * Access the xy area the Player is currently at and check the amount of food.
      * If the amount is greater than zero, decrement from the amount and add it to the
      * player's food inventory
-     * @param player
+     * @param player - The player playing the game
      */
     public static void harvestAnimal(Player player, BoardPiece[][] boardGame, MediaPlayer mediaPlayer) {
 
@@ -130,7 +130,7 @@ public class Action {
      * Access the xy area the Player is currently at and check the amount of water.
      * If the amount is greater than zero, decrement from the amount and add it to the
      * player's water inventory
-     * @param player
+     * @param player - The player playing the game
      */
     public static void collectWater(Player player, BoardPiece[][] gameBoard, MediaPlayer mediaPlayer) {
 
@@ -173,7 +173,7 @@ public class Action {
     /**
      * If there is food in the player's inventory, decrement from that value and
      * regenerate the player's hunger value
-     * @param player
+     * @param player - The player playing the game
      */
     public  static void eatFood(Player player, MediaPlayer mediaPlayer) {
 
@@ -199,7 +199,7 @@ public class Action {
     /**
      * If the player has water in their inventory, decrement from that value and
      * regen the player's thirst
-     * @param player
+     * @param player - The player playing the game
      */
     public static void drinkWater(Player player, MediaPlayer mediaPlayer) {
 
@@ -224,8 +224,9 @@ public class Action {
     /**
      * If the player has firewood in their inventory,
      * then create a new CampFire at that xy BoardPiece.
-     * @param player
-     * @param gameTime
+     * @param player - The player playing the game
+     * @param gameTime - The in-game time of the game
+     * @param gameBoard - Used to get the position of the current area
      */
     public static void startFire(Player player, GameTime gameTime, BoardPiece[][] gameBoard) {
 
@@ -250,9 +251,9 @@ public class Action {
     /**
      * Method occurs when the user picks up a plant, and modifies board piece
      * and player parameters whether or not picking up a plant was successful
-     * @param player
-     * @param gameBoard
-     * @param mediaPlayer
+     * @param player - The player playing the game, and will possibly increment on inventory items
+     * @param gameBoard - Checking the current gameboard area
+     * @param mediaPlayer - Allows audio to be played
      */
     public static void pickPlant(Player player, BoardPiece[][] gameBoard, MediaPlayer mediaPlayer) {
 
@@ -293,8 +294,8 @@ public class Action {
 
     /**
      * The player looks around in the surrounding area
-     * @param player
-     * @param gameBoard
+     * @param player - The player playing the game
+     * @param gameBoard - Used to get the position of where the player is looking
      */
     public static void look(Player player, BoardPiece[][] gameBoard) {
 
@@ -340,8 +341,8 @@ public class Action {
 
     /**
      * A method that checks whether player's camp fire is still running
-     * @param player
-     * @param gameBoard
+     * @param player - The player playing the game
+     * @param gameBoard - used to get the position of the fire
      * @return true if the player's campfire is still running, otherwise false
      */
     public static boolean isFireBurning(Player player, BoardPiece[][] gameBoard) {
@@ -358,7 +359,7 @@ public class Action {
     //TODO: Change to string resources
     /**
      * Checks for available actions when using the look action
-     * @param area
+     * @param area - The area that the player is looking at
      * @return a string listing the player's surroundings within the area
      */
     private static String lookActionHelper(BoardPiece area) {

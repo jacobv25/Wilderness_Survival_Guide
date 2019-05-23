@@ -1,4 +1,10 @@
 package edu.miracosta.finalprojecttest.view_play;
+/**
+ * This activity occurs when either your life has depleted in some way,
+ * or you have successfully found the exit in the game.
+ * @author Gabriel Bactol & Jacob Valenzuela
+ * @since 5/22/19
+ */
 
 import android.content.Intent;
 import android.os.Handler;
@@ -16,6 +22,10 @@ import static edu.miracosta.finalprojecttest.MainActivity.RUNNING_GAME_FINISH;
 
 public class EndGameActivity extends AppCompatActivity {
 
+    /**
+     * Runs method when the activity boots up
+     * @param savedInstanceState - Allows the activity to revert to a previous state
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +40,7 @@ public class EndGameActivity extends AppCompatActivity {
         Player player = intent.getParcelableExtra("Player");
         GameTime gameTime = intent.getParcelableExtra("GameTime");
 
+        //if the player had successfully escaped
         if (RUNNING_GAME_BOARD[player.getY()][player.getX()] == RUNNING_GAME_FINISH) {
             //set color
             deathTextView.setTextColor(getResources().getColor(R.color.colorBlue));
@@ -43,6 +54,7 @@ public class EndGameActivity extends AppCompatActivity {
                 }
             }, 5000);
         }
+        //if the player's life had been depleted
         else if (player.getCondition() == 0) {
             //set color
             deathTextView.setTextColor(getResources().getColor(R.color.colorRed));
@@ -58,6 +70,9 @@ public class EndGameActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * If the user presses the back button on their phone or tablet, it goes back to the beginning
+     */
     @Override
     public void onBackPressed() {
         super.onBackPressed();

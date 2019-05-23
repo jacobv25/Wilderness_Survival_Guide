@@ -1,5 +1,9 @@
 package edu.miracosta.finalprojecttest.view_play;
-
+/**
+ * What is used to display a single item object onto a list.
+ * @author Gabriel Bactol & Jacob Valenzuela
+ * @since 5/22/19
+ */
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.drawable.Drawable;
@@ -30,6 +34,13 @@ public class InventoryListAdapter extends ArrayAdapter<Item> {
     private List<Item> mAllItems;
     private int mResourceId;
 
+    /**
+     * Creates a new <code>InventoryListAdapter</code> given a mContext, resource id and list of plants.
+     *
+     * @param context The mContext for which the adapter is being used (typically an activity)
+     * @param resourceId The resource id (typically the layout file name)
+     * @param allItems The list of all Items to display
+     */
     public InventoryListAdapter(Context context, int resourceId, List<Item> allItems) {
         super(context, resourceId, allItems);
         mContext = context;
@@ -37,6 +48,13 @@ public class InventoryListAdapter extends ArrayAdapter<Item> {
         mAllItems = allItems;
     }
 
+    /**
+     * Gets the view associated with the layout.
+     * @param pos The position of the inventory selected in the list.
+     * @param convertView The converted view.
+     * @param parent The parent - ArrayAdapter
+     * @return The new view with all content set.
+     */
     @Override
     public View getView(int pos, View convertView, ViewGroup parent)
     {

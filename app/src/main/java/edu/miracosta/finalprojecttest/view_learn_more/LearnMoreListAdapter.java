@@ -37,7 +37,7 @@ public class LearnMoreListAdapter extends ArrayAdapter<Animal> {
      *
      * @param context The mContext for which the adapter is being used (typically an activity)
      * @param rId The resource id (typically the layout file name)
-     * @param animals The list of plants to display
+     * @param animals The list of animals to display
      */
     public LearnMoreListAdapter(Context context, int rId, List<Animal> animals) {
         super(context, rId, animals);

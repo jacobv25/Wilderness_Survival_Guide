@@ -1,5 +1,10 @@
 package edu.miracosta.finalprojecttest.view_play;
-
+/**
+ * PlayActivity.java: This is where the game will lead to when you press the Play button
+ * on the main menu, with buttons laid out on where you can go to.
+ * @author Gabriel Bactol & Jacob Valenzuela
+ * @since 5/22/19
+ */
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -89,6 +94,11 @@ public class PlayActivity extends AppCompatActivity {
     private ProgressBar playerThirstProgressBar;
     private ProgressBar playerConditionProgressBar;
 
+    /**
+     * Runs method when the activity boots up, also where all the buttons are linked
+     * to their ids.
+     * @param savedInstanceState - Allows the activity to revert to a previous state
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -148,6 +158,10 @@ public class PlayActivity extends AppCompatActivity {
         currentAreaTextView.setText(StoryElements.HOW_TO_PLAY);
     }
 
+    /**
+     * When the user presses a direction, the person will move to another place on the board
+     * @param v - The button that was pressed
+     */
     public void movePlayer(View v) {
         String buttonText = ((Button)v).getText().toString();
 
@@ -186,6 +200,10 @@ public class PlayActivity extends AppCompatActivity {
         playMedia();
     }
 
+    /**
+     * Setting the values of the player's condition
+     * @param player - The player playing the game
+     */
     private void setPlayerProgressBars(Player player) {
 
         playerTempProgressBar.setProgress((int)player.getTemperature());
@@ -194,6 +212,10 @@ public class PlayActivity extends AppCompatActivity {
         playerConditionProgressBar.setProgress((int)player.getCondition());
     }
 
+    /**
+     * Setting the progress bar of the temperature based on its value
+     * @param weather - The current weather within the game
+     */
     private void setTemperatureProgressBar(Weather weather) {
         int temp = weather.getTemp();
         Log.i("temp", "temp=" + temp);
@@ -201,7 +223,11 @@ public class PlayActivity extends AppCompatActivity {
 
     }
 
-
+    /**
+     * An method that runs when the inventory button is pressed, leading them to another activity
+     * for the inventory.
+     * @param v - The button that was pressed.
+     */
     public void inventoryButtonPressed(View v) {
         Intent intent = new Intent(this, InventoryListActivity.class);
 
@@ -210,6 +236,11 @@ public class PlayActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * An method that runs when the action button is pressed, leading them to another activity
+     * for a specific action.
+     * @param v - The button that was pressed.
+     */
     public void actionButtonPressed(View v) {
 
         Intent intent = new Intent(this, ActionActivity.class);
@@ -222,6 +253,12 @@ public class PlayActivity extends AppCompatActivity {
         startActivityForResult(intent, REQUEST_CODE_1);
     }
 
+    /**
+     * Getting data about the player
+     * @param requestCode - Request code from permissions
+     * @param resultCode - The result from the request code
+     * @param data - The data from the request code
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -269,6 +306,10 @@ public class PlayActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Changing the background colors based on the time within the game.
+     * @param time - The time within the game
+     */
     private void changeBackground(GameTime time) {
 
         if (time.getDayTime() >= 1260 || time.getDayTime() < 360 ) {
@@ -312,6 +353,9 @@ public class PlayActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Playing specific sounds throughout the player's playthrough, such as daytime music.
+     */
     private void playMedia() {
 
 //        if (player.isPlayerInside(RUNNING_GAME_BOARD)) {
@@ -355,6 +399,10 @@ public class PlayActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Checking the player's condition on whether he is dead, or his health went to 0
+     * @param player - the player playing the game
+     */
     private void isPlayerDead(Player player) {
 
         if (player.getCondition() == 0) {
@@ -375,6 +423,10 @@ public class PlayActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Checking whether the player found the goal spot to end the game
+     * @param player - The player to find out the position of where he is on the board
+     */
     private void didPlayerWin(Player player) {
 
         if( RUNNING_GAME_BOARD[player.getY()][player.getX()] == RUNNING_GAME_FINISH) {
@@ -395,6 +447,10 @@ public class PlayActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Setting the text if the player's status starts to become low, such as freezing,
+     * hungry, or thirsty
+     */
     private void setAfflictionText() {
         //Set the Temperature
         if (player.getTemperature() == 0) {
@@ -433,6 +489,10 @@ public class PlayActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * If the user presses the back button, all the audio stops, and the game goes back to the
+     * main menu.
+     */
     @Override
     public void onBackPressed() {
         super.onBackPressed();

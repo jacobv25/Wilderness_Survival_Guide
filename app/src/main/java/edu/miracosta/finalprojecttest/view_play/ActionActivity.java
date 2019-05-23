@@ -1,5 +1,10 @@
 package edu.miracosta.finalprojecttest.view_play;
-
+/**
+ * ActionActivity.java: This is where the player can perform a specific action should they have
+ * pressed the action button in the PlayActivity class.
+ * @author Gabriel Bactol & Jacob Valenzuela
+ * @since 5/22/19
+ */
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -38,6 +43,11 @@ public class ActionActivity extends AppCompatActivity {
     private MediaPlayer pickPlantMediaPlayer;
     private MediaPlayer eatFoodMediaPlayer;
 
+    /**
+     * Runs method when the activity boots up, also where all the buttons are linked
+     * to their ids.
+     * @param savedInstanceState - Allows the activity to revert to a previous state
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,7 +77,10 @@ public class ActionActivity extends AppCompatActivity {
         time = intent.getParcelableExtra("GameTime");
     }
 
-
+    /**
+     * Depending on what button the player presses, they do that based on their surroundings
+     * @param v - The button that was pressed.
+     */
     public void actionButtonPressed(View v) {
 
         Intent intent = new Intent();

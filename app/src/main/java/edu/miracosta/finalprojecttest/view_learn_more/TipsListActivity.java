@@ -49,10 +49,10 @@ public class TipsListActivity extends ListActivity {
     /**
      * This method runs when an Tip object is selected from the list, and sends information
      * of the plant object within that specific position into the details activity.
-     * @param l
-     * @param v
-     * @param position
-     * @param id
+     * @param l - ListView object that the user pressed on
+     * @param v - The button the user pressed
+     * @param position - Position within the list
+     * @param id - Id associated with the button
      */
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {

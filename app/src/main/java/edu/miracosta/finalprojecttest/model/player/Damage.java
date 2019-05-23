@@ -35,9 +35,9 @@ public class Damage {
      *
      *  Calculate the damge based on a small amount of time passing
      *
-     * @param player
-     * @param weather
-     * @param gameTime
+     * @param player - The player playing the game
+     * @param weather - The in-game weather of the area
+     * @param gameTime - The in-game time
      */
     public static void damagePlayerSmall(Player player, Weather weather, GameTime gameTime) {
 
@@ -56,9 +56,9 @@ public class Damage {
      *  Checks the current weather and determines the damage to the Player's temperature.
      *  The lower the temperature, the more damage done.
      *  Calculates based off a small amount of time passing.
-     * @param player
-     * @param weather
-     * @param gameTime
+     * @param player - The player playing the game
+     * @param weather - The in-game weather of the area
+     * @param gameTime - The in-game time
      */
     private static void calcTempDamageSmall(Player player, Weather weather, GameTime gameTime) {
 
@@ -75,7 +75,7 @@ public class Damage {
     /**
      * Sets the Player's thirst to what it was, minus THIRST_DAMAGE_SMALL
      *
-     * @param player
+     * @param player - The player playing the game
      */
     private static void calcThirstDamageSmall(Player player) {
 
@@ -86,7 +86,7 @@ public class Damage {
     /**
      * Sets the Player's hunger to what it originally was, minus HUNGER_DAMAGE_SMALL
      *
-     * @param player
+     * @param player - The player playing the game
      */
     private static void calcHungerDamageSmall(Player player) {
 
@@ -97,7 +97,7 @@ public class Damage {
 
     /**
      * If the Player's hunger, thirst or warmth reach zero, the Player's condition will begin to drop
-     * @param player
+     * @param player - The player playing the game
      */
     private static void calcConditionDamageSmall(Player player) {
 
@@ -120,11 +120,11 @@ public class Damage {
      *
      *  Calculate the Player's hunger, thirst and condition damage
      *
-     *  Calculate the damge based on a large amount of time passing
+     *  Calculate the damage based on a large amount of time passing
      *
-     * @param player
-     * @param weather
-     * @param gameTime
+     * @param player - The player playing the game
+     * @param weather - The in-game weather of the area
+     * @param gameTime - The in-game time
      */
     public static void damagePlayerLarge(Player player, Weather weather, GameTime gameTime) {
 
@@ -146,9 +146,9 @@ public class Damage {
      *  Checks the current weather and determines the damage to the Player's temperature.
      *  The lower the temperature, the more damage done.
      *  Calculates based off a large amount of time passing.
-     * @param player
-     * @param weather
-     * @param gameTime
+     * @param player - The player playing the game
+     * @param weather - The in-game weather of the area
+     * @param gameTime - The in-game time
      */
     private static void calcTempDamageLarge(Player player, Weather weather, GameTime gameTime) {
 
@@ -165,7 +165,7 @@ public class Damage {
     /**
      * Sets the Player's thirst to what it was, minus THIRST_DAMAGE_SMALL
      *
-     * @param player
+     * @param player - The player playing the game
      */
     private static void calcThirstDamageLarge(Player player) {
 
@@ -176,7 +176,7 @@ public class Damage {
     /**
      * Sets the Player's hunger to what it originally was, minus HUNGER_DAMAGE_SMALL
      *
-     * @param player
+     * @param player - The player playing the game
      */
     private static void calcHungerDamageLarge(Player player) {
 
@@ -187,7 +187,7 @@ public class Damage {
 
     /**
      * If the Player's hunger, thirst or warmth reach zero, the Player's condition will begin to drop
-     * @param player
+     * @param player - The player playing the game
      */
     private static void calcConditionDamageLarge(Player player) {
 
@@ -208,7 +208,7 @@ public class Damage {
     /**
      * Sets the Player's hunger to what it originally was, minus HUNGER_DAMAGE_SMALL
      *
-     * @param player
+     * @param player - The player playing the game
      */
     private static void calcHungerDamageWait(Player player) {
 

@@ -1,4 +1,9 @@
 package edu.miracosta.finalprojecttest.model;
+/**
+ * Used to get an idea of how to build the game.
+ * @author Gabriel Bactol & Jacob Valenzuela
+ * @since 5/22/19
+ */
 
 import java.util.Scanner;
 
@@ -15,6 +20,10 @@ import static edu.miracosta.finalprojecttest.MainActivity.RUNNING_GAME_BOARD;
 
 public class ConsoleTester {
 
+    /**
+     * How the program would run, assuming we were on regular java and not android
+     * @param args - Allows for command lines of objects
+     */
     public static void main(String[] args) {
 
 
@@ -84,6 +93,12 @@ public class ConsoleTester {
 
     }
 
+    /**
+     * Decides the action of the player based on input
+     * @param input - the input the user made
+     * @param player - The player playing the game
+     * @param gameTime - The in-game timer
+     */
     private static void decideAction(String input, Player player, GameTime gameTime) {
         String nullText = null;
         switch (input) {
@@ -121,7 +136,12 @@ public class ConsoleTester {
 
     }
 
-
+    /**
+     * A method that would allow the player to move throughout the board
+     * @param input - The input the user had made
+     * @param player - The player the user is playing as
+     * @param gameBoard - used to get the position of objects within the gameBoard
+     */
     private static void movePlayerBoardPiece(String input, Player player, BoardPiece[][] gameBoard) {
 
         switch (input)

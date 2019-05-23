@@ -18,7 +18,7 @@ import static edu.miracosta.finalprojecttest.model.board_game.LevelOneValues.FNS
 public class MainActivity extends AppCompatActivity {
 
     /**
-     * HOW TO: Change the RUNNING_GAME_BOARD and RUNNINGG_GAME_START to change the game board
+     * HOW TO: Change the RUNNING_GAME_BOARD and RUNNING_GAME_START to change the game board
      */
     public static final BoardPiece[][] RUNNING_GAME_BOARD = LEVEL_1;
     public static final BoardPiece RUNNING_GAME_START = CABN_5_2;
@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
     private MediaPlayer riverFluteMediaPlayer;
 
     /**
-     *
-     * @param savedInstanceState
+     * Runs method when the activity boots up
+     * @param savedInstanceState - Allows the activity to revert to a previous state
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     *
+     * When the program starts up, the riverFlute will start playing
      */
     @Override
     protected void onStart() {
@@ -53,6 +53,9 @@ public class MainActivity extends AppCompatActivity {
         riverFluteMediaPlayer.start();
     }
 
+    /**
+     * If the audio of the river flute was ever paused, this method will resume it
+     */
     @Override
     protected void onPostResume() {
         super.onPostResume();
@@ -62,8 +65,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     *
-     * @param V
+     * When the user presses the play button, it switches to the play activity
+     * @param V - The button that was pressed
      */
     public void switchToPlayActivity(View V) {
 
@@ -74,8 +77,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     *
-     * @param V
+     * When the user presses the learn more button, it switches to the learn activity
+     * @param V - The button that was pressed
      */
     public void switchToLearnMoreActivity(View V) {
 

@@ -40,7 +40,7 @@ public class Regeneration {
     /**
      * Set's the player's temperature to what it was
      * plus the default cabin warmth regen value.
-     * @param player
+     * @param player - The player playing the game
      */
     private static void regenInside(Player player) {
 
@@ -50,7 +50,7 @@ public class Regeneration {
     /**
      * Set's the player's condition to what it was
      * plus the default condition regen value.
-     * @param player
+     * @param player - The player playing the game
      */
     private static void regenCondition(Player player) {
 
@@ -62,7 +62,7 @@ public class Regeneration {
     /**
      * Set's the player's thirst to what it was
      * plus the default thirst regen value.
-     * @param player
+     * @param player - The player playing the game
      */
     public static void regenThirst(Player player) {
 
@@ -71,7 +71,7 @@ public class Regeneration {
     /**
      * Set's the player's hunger to what it was
      * plus the default hunger regen value.
-     * @param player
+     * @param player - The player playing the game
      */
     public static void regenHunger(Player player) {
 
@@ -80,7 +80,7 @@ public class Regeneration {
     /**
      * Set's the player's temperature to what it was
      * plus the default fire warmth regen value.
-     * @param player
+     * @param player - The player playing the game
      */
     public static void regenFromFire(Player player) {
 

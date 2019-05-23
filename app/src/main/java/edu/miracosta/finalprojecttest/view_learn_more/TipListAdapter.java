@@ -1,5 +1,9 @@
 package edu.miracosta.finalprojecttest.view_learn_more;
-
+/**
+ * Class is used to display a single tip object onto a list.
+ * @author Gabriel Bactol & Jacob Valenzuela
+ * @since 5/22/19
+ */
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.drawable.Drawable;
@@ -29,7 +33,7 @@ public class TipListAdapter extends ArrayAdapter<Tip> {
      *
      * @param context The mContext for which the adapter is being used (typically an activity)
      * @param rId The resource id (typically the layout file name)
-     * @param tips The list of plants to display
+     * @param tips The list of tips to display
      */
     public TipListAdapter(Context context, int rId, List<Tip> tips) {
         super(context, rId, tips);
