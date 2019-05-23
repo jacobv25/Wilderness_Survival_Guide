@@ -1,5 +1,10 @@
 package edu.miracosta.finalprojecttest.view_learn_more;
-
+/**
+ * Displays information about an item within the learn more activity, being plants, animals, and
+ * tips.
+ * @author Gabriel Bactol & Jacob Valenzuela
+ * @since 5/22/19
+ */
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +18,11 @@ import java.util.List;
 import edu.miracosta.finalprojecttest.R;
 import edu.miracosta.finalprojecttest.model.enviroment.Animal;
 import edu.miracosta.finalprojecttest.model.JSONLoader;
-
+/**
+ * Displays a list of animals that are loaded from a JSON file
+ * @author Gabriel Bactol & Jacob Valenzuela
+ * @since 5/22/19
+ */
 public class AnimalsListActivity extends ListActivity {
 
     //TODO: Create a custom list adapter.
@@ -25,10 +34,15 @@ public class AnimalsListActivity extends ListActivity {
 
     private LearnMoreListAdapter learnMoreListAdapter;
     private ListView learnMoreListView;
+    /**
+     * Runs method when the activity boots up
+     * @param savedInstanceState - Allows the activity to revert to a previous state
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //loading animal objects from json file
         try {
             allAnimals = JSONLoader.loadJSONFromAsset(this);
         } catch (IOException e) {
@@ -37,9 +51,18 @@ public class AnimalsListActivity extends ListActivity {
 
         animalsListView = findViewById(R.id.animalsLearnMoreListView);
 
+        //setting adapter to be viewed with the list
         setListAdapter(new LearnMoreListAdapter(this, R.layout.learn_more_list_item, allAnimals));
     }
 
+    /**
+     * This method runs when an Animal object is selected from the list, and sends information
+     * of the animal object within that specific position into the details activity.
+     * @param l
+     * @param v
+     * @param position
+     * @param id
+     */
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
         Intent detailsIntent = new Intent(this, ActivityDetails.class);

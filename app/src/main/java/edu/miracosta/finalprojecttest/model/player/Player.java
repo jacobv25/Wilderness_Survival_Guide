@@ -51,7 +51,9 @@ public class Player implements Parcelable {
     private int plants;
 
 
-
+    /**
+     * Default constructor, in case there are no parameters given
+     */
     public Player() {
         condition = 100;
         temperature = 100;
@@ -79,6 +81,15 @@ public class Player implements Parcelable {
         else return false;
     }
 
+    /**
+     * Moves the player in a specific direction in the board based on the button pressed
+     * @param buttonText
+     * @param player
+     * @param gameBoard
+     * @param walkingSFX
+     * @param buttonList
+     * @param time
+     */
     public void movePlayerBoardPiece(String buttonText, Player player, BoardPiece[][] gameBoard,
                                      MediaPlayer walkingSFX, List<Button> buttonList, GameTime time) {
 
@@ -140,6 +151,10 @@ public class Player implements Parcelable {
 
     }
 
+    /**
+     * If the player moves, the buttons are set to be invisible temporarily
+     * @param buttonList
+     */
     private void setButtonsInvisibleAfterMove(final List<Button> buttonList) {
 
         //change all buttons to INVISIBLE
@@ -158,54 +173,98 @@ public class Player implements Parcelable {
         }, 2500);
     }
 
+    /**
+     * Gets a list of what is in the player's inventory
+     * @return a list of the player's inventory
+     */
     public List<Item> getInventory() {
 
         List<Item> inventory = new ArrayList<>();
 
-        inventory.add(new Item("Insert Firewood image", "Firewood", firewood));
-        inventory.add(new Item("Insert Food image", "Food", food));
-        inventory.add(new Item("Insert Water image", "Water", water));
-        inventory.add(new Item("Insert Plant image", "Plants", plants));
+        inventory.add(new Item("firewood.png", "Firewood", firewood));
+        inventory.add(new Item("food.png", "Food", food));
+        inventory.add(new Item("water.png", "Water", water));
+        inventory.add(new Item("plant.png", "Plants", plants));
 
         return inventory;
     }
 
-    public int getNumInventoryItems () {
+    /**
+     * A method that returns the total amount of items within the player's inventory
+     * @return the total amount of items within the player's inventory
+     */
+    public int getNumInventoryItems() {
         return firewood + food + water + plants;
     }
 
+    /**
+     * A method that returns the amount of firewood in the player's inventory
+     * @return the amount of firewood in the player's inventory
+     */
     public int getFirewood() {
         return firewood;
     }
 
+    /**
+     * A mutator that writes a integer into the firewood variable
+     * @param firewood an integer for the firewood variable
+     */
     public void setFirewood(int firewood) {
         this.firewood = firewood;
     }
 
+    /**
+     * A method that returns the total amount of food within the player's inventory
+     * @return the integer within the food variable
+     */
     public int getFood() {
         return food;
     }
 
+    /**
+     * A mutator that writes a integer into the food variable
+     * @param food an integer for the food variable
+     */
     public void setFood(int food) {
         this.food = food;
     }
 
+    /**
+     * A method that returns the total amount of water within the player's inventory
+     * @return the integer within the water variable
+     */
     public int getWater() {
         return water;
     }
 
+    /**
+     * A mutator that writes a water into the water variable
+     * @param water an integer for the water variable
+     */
     public void setWater(int water) {
         this.water = water;
     }
 
+    /**
+     * A method that returns the total amount of plants within the player's inventory
+     * @return the integer within the plants variable
+     */
     public int getPlants() {
         return plants;
     }
 
+    /**
+     * An mutator that writes a integer into the plants variable
+     * @param plants an integer for the plants variable
+     */
     public void setPlants(int plants) {
         this.plants = plants;
     }
 
+    /**
+     * A method that returns the double variable condition
+     * @return the double within the condition variable
+     */
     public double getCondition() {
         return condition;
     }
@@ -227,6 +286,10 @@ public class Player implements Parcelable {
         else this.condition = condition;
     }
 
+    /**
+     * A method that returns the double variable temperature
+     * @return the double within the temperature variable
+     */
     public double getTemperature() {
         return temperature;
     }
@@ -248,6 +311,10 @@ public class Player implements Parcelable {
         else this.temperature = temperature;
     }
 
+    /**
+     * A method that returns the double variable temperature
+     * @return the double within the hunger variable
+     */
     public double getHunger() {
         return hunger;
     }
@@ -269,7 +336,10 @@ public class Player implements Parcelable {
         else this.hunger = hunger;
 
     }
-
+    /**
+     * A method that returns the double variable thirst
+     * @return the double within the thirst variable
+     */
     public double getThirst() {
         return thirst;
     }
@@ -291,36 +361,69 @@ public class Player implements Parcelable {
         else this.thirst = thirst;
     }
 
+    /**
+     * A method that returns the player's x position
+     * @return the integer within the x variable
+     */
     public int getX() {
         return x;
     }
 
+    /**
+     * A method that returns the player's y position
+     * @return the integer within the y variable
+     */
     public int getY() {
         return y;
     }
 
+    /**
+     * A mutator that sets the player's x position
+     * @param x an integer for the x value
+     */
     public void setX(int x) {
         this.x = x;
     }
 
+    /**
+     * A mutator that sets the player's y position
+     * @param y an integer for the y value
+     */
     public void setY(int y) {
         this.y = y;
     }
 
+    /**
+     * A method that gets the display text
+     * @return the string within the displayText variable
+     */
     public String getDisplayText() {
         return displayText;
     }
 
+    /**
+     * A mutator that sets the display text
+     * @param displayText a string for the displayText variable
+     */
     public void setDisplayText(String displayText) {
         this.displayText = displayText;
     }
 
     ////////PARCELABLE METHODS
+    /**
+     * Describes the contents of the Player object
+     * @return an integer
+     */
     @Override
     public int describeContents() {
         return 0;
     }
 
+    /**
+     * A way to access the campFire object as a parcelable object
+     * @param dest where the parcelable information is being sent to
+     * @param flags determines how the object should be written
+     */
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeDouble(condition);
@@ -337,6 +440,10 @@ public class Player implements Parcelable {
         dest.writeInt(plants);
     }
 
+    /**
+     * Retrieves a parcelable object and turns it into a Player object using a constructor
+     * @param parcel The object used for the Player object
+     */
     private Player(Parcel parcel) {
         condition = parcel.readDouble();
         temperature = parcel.readDouble();
@@ -353,11 +460,21 @@ public class Player implements Parcelable {
     }
 
     public static final Parcelable.Creator<Player> CREATOR = new Creator<Player>() {
+        /**
+         * Creates a new Player object based on the Parcelable object passed in
+         * @param source the object used to create the parcelable object
+         * @return the Player object made from the source
+         */
         @Override
         public Player createFromParcel(Parcel source) {
             return new Player(source);
         }
 
+        /**
+         * Creates a new Player object array
+         * @param size the size of the array
+         * @return the Player array made from the method
+         */
         @Override
         public Player[] newArray(int size) {
             return new Player[size];
@@ -365,8 +482,8 @@ public class Player implements Parcelable {
     };
 
     /**
-     *
-     * @return
+     * A list of the variables and values within the Player object.
+     * @return A string containing the variables and their values of this Player object
      */
     @Override
     public String toString() {

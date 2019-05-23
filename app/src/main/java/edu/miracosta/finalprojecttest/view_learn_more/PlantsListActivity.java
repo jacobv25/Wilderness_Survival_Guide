@@ -1,5 +1,9 @@
 package edu.miracosta.finalprojecttest.view_learn_more;
-
+/**
+ * Displays a list of plants loaded from a JSON file
+ * @author Gabriel Bactol & Jacob Valenzuela
+ * @since 5/22/19
+ */
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,6 +27,10 @@ public class PlantsListActivity extends ListActivity {
     private List<Plant> allPlants;
     private ListView plantsListView;
 
+    /**
+     * Runs method when the activity boots up
+     * @param savedInstanceState - Allows the activity to revert to a previous state
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +46,14 @@ public class PlantsListActivity extends ListActivity {
         setListAdapter(new PlantsListAdapter(this, R.layout.plant_list_item, allPlants));
     }
 
+    /**
+     * This method runs when an Plant object is selected from the list, and sends information
+     * of the plant object within that specific position into the details activity.
+     * @param l
+     * @param v
+     * @param position
+     * @param id
+     */
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
         Intent detailsIntent = new Intent(this, ActivityDetails.class);

@@ -1,5 +1,12 @@
 package edu.miracosta.finalprojecttest.model;
 
+/**
+ * GoogleMaps.java: Used in the GoogleMaps activity,
+ * this class displays the location of where the program was built, being MiraCosta College!
+ * @author Gabriel Bactol & Jacob Valenzuela
+ * @since 5/22/19
+ */
+
 import android.os.Bundle;
 
 import android.view.View;
@@ -27,6 +34,11 @@ public class GoogleMaps extends AppCompatActivity implements OnMapReadyCallback 
     //member variable to store google map
     private GoogleMap map;
 
+    /**
+     * The method runs when the activity loads, linking the Google Maps Fragment and displays it
+     * @param savedInstanceState - A variable containing data that allows the activity to go to
+     *                             a previous state
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +49,11 @@ public class GoogleMaps extends AppCompatActivity implements OnMapReadyCallback 
         mapFragment.getMapAsync(this);
     }
 
+    /**
+     * Allows Google Maps to be displayed on an activity, and make markers
+     * on specific locations. You can also look around with the camera.
+     * @param googleMap - Data associated with Google Maps
+     */
     @Override
     public void onMapReady(GoogleMap googleMap)
     {

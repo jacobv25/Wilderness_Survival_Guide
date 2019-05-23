@@ -1,5 +1,10 @@
 package edu.miracosta.finalprojecttest.model;
 
+/**
+ * Since it is a game, we were interested in adding a story to the game.
+ * @author Gabriel Bactol & Jacob Valenzuela
+ * @since 5/22/19
+ */
 public class StoryElements {
 
     public static final String INTRO = "Your eyes open to darkness.\n" +

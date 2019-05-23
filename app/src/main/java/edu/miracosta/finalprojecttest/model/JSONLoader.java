@@ -19,7 +19,7 @@ import edu.miracosta.finalprojecttest.model.enviroment.Tip;
 public class JSONLoader {
 
     /**
-     * Loads JSON data from a file in the assets directory.
+     * Loads JSON data from a file, for the animals, in the assets directory.
      * @param context The activity from which the data is loaded.
      * @throws IOException If there is an error reading from the JSON file.
      */
@@ -59,7 +59,7 @@ public class JSONLoader {
         return allAnimals;
     }
     /**
-     * Loads JSON data from a file in the assets directory.
+     * Loads JSON data from a file, for the plant, in the assets directory.
      * @param context The activity from which the data is loaded.
      * @throws IOException If there is an error reading from the JSON file.
      */
@@ -98,6 +98,11 @@ public class JSONLoader {
 
         return allPlants;
     }
+    /**
+     * Loads JSON data from a file, for the Tips, in the assets directory.
+     * @param context The activity from which the data is loaded.
+     * @throws IOException If there is an error reading from the JSON file.
+     */
     public static List<Tip> loadJSONFromAssetTips(Context context) throws IOException {
         List<Tip> allTips = new ArrayList<>();
         String json;

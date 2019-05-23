@@ -25,7 +25,7 @@ public class TipListAdapter extends ArrayAdapter<Tip> {
     private int mResourceId;
 
     /**
-     * Creates a new <code>plantListAdapter</code> given a mContext, resource id and list of games.
+     * Creates a new <code>plantListAdapter</code> given a mContext, resource id and list of tips.
      *
      * @param context The mContext for which the adapter is being used (typically an activity)
      * @param rId The resource id (typically the layout file name)
@@ -40,7 +40,7 @@ public class TipListAdapter extends ArrayAdapter<Tip> {
 
     /**
      * Gets the view associated with the layout.
-     * @param pos The position of the Game selected in the list.
+     * @param pos The position of the tip selected in the list.
      * @param convertView The converted view.
      * @param parent The parent - ArrayAdapter
      * @return The new view with all content set.

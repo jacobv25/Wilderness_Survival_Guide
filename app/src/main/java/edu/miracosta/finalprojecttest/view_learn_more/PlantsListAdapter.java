@@ -1,4 +1,9 @@
 package edu.miracosta.finalprojecttest.view_learn_more;
+/**
+ * What is used to display a single plant object onto a list.
+ * @author Gabriel Bactol & Jacob Valenzuela
+ * @since 5/22/19
+ */
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.drawable.Drawable;
@@ -19,7 +24,7 @@ import edu.miracosta.finalprojecttest.model.enviroment.Animal;
 import edu.miracosta.finalprojecttest.model.enviroment.Plant;
 
 /**
- * Helper class to provide custom adapter for the <code>Game</code> list.
+ * Helper class to provide custom adapter for the <code>Plant</code> list.
  */
 public class PlantsListAdapter extends ArrayAdapter<Plant> {
 
@@ -28,7 +33,7 @@ public class PlantsListAdapter extends ArrayAdapter<Plant> {
     private int mResourceId;
 
     /**
-     * Creates a new <code>plantListAdapter</code> given a mContext, resource id and list of games.
+     * Creates a new <code>plantListAdapter</code> given a mContext, resource id and list of plants.
      *
      * @param context The mContext for which the adapter is being used (typically an activity)
      * @param rId The resource id (typically the layout file name)
@@ -43,7 +48,7 @@ public class PlantsListAdapter extends ArrayAdapter<Plant> {
 
     /**
      * Gets the view associated with the layout.
-     * @param pos The position of the Game selected in the list.
+     * @param pos The position of the Plant selected in the list.
      * @param convertView The converted view.
      * @param parent The parent - ArrayAdapter
      * @return The new view with all content set.
