@@ -247,7 +247,13 @@ public class Action {
             currentArea.setCampFire(null);
         }
     }
-    //TODO: Write documentation
+    /**
+     * Method occurs when the user picks up a plant, and modifies board piece
+     * and player parameters whether or not picking up a plant was successful
+     * @param player
+     * @param gameBoard
+     * @param mediaPlayer
+     */
     public static void pickPlant(Player player, BoardPiece[][] gameBoard, MediaPlayer mediaPlayer) {
 
         int x = player.getX();
@@ -285,6 +291,11 @@ public class Action {
 //        }
     }
 
+    /**
+     * The player looks around in the surrounding area
+     * @param player
+     * @param gameBoard
+     */
     public static void look(Player player, BoardPiece[][] gameBoard) {
 
         int x = player.getX();
@@ -327,6 +338,12 @@ public class Action {
 //        }
     }
 
+    /**
+     * A method that checks whether player's camp fire is still running
+     * @param player
+     * @param gameBoard
+     * @return true if the player's campfire is still running, otherwise false
+     */
     public static boolean isFireBurning(Player player, BoardPiece[][] gameBoard) {
 
         if (gameBoard[player.getY()][player.getX()].getCampFire() == null) {
@@ -336,8 +353,14 @@ public class Action {
         else
             return true;
     }
+
     //TODO: Get rid of hard coded values
     //TODO: Change to string resources
+    /**
+     * Checks for available actions when using the look action
+     * @param area
+     * @return a string listing the player's surroundings within the area
+     */
     private static String lookActionHelper(BoardPiece area) {
 
         StringBuilder displayText = new StringBuilder();

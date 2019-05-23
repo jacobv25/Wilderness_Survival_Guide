@@ -37,6 +37,11 @@ public class GameTime implements Parcelable {
         GLOBAL_TOTAL_TIME = this.totalTime;
     }
 
+    /**
+     * A full constructor used to create an object with specific parameters passed in
+     * @param totalTime - Total running time of the game
+     * @param dayTime - The time within the game
+     */
     public GameTime(int totalTime, int dayTime) {
         this.totalTime = totalTime;
         this.dayTime = dayTime;
@@ -45,6 +50,10 @@ public class GameTime implements Parcelable {
         GLOBAL_DAY_TIME = dayTime;
     }
 
+    /**
+     * An method to get the time displayed
+     * @return dayTimeFormatted, a string setting the time in a specific format
+     */
     public String getDayTimeFormatted() {
         int t = dayTime;
         int hours = t / 60; //since both are ints, you get an int
@@ -54,6 +63,10 @@ public class GameTime implements Parcelable {
         return dayTimeFormatted;
     }
 
+    /**
+     * An accessor to get the total time displayed
+     * @return totalTimeFormatted, a string setting the total time in a specific format
+     */
     public String getTotalTimeFormatted() {
 
         int days = totalTime/(24*60);
@@ -96,6 +109,10 @@ public class GameTime implements Parcelable {
         }
     }
 
+    /**
+     * A list of the variables and values within the GameTime object.
+     * @return A string containing the variables and their values of this GameTime object
+     */
     @Override
     public String toString() {
         return "GameTime{" +
@@ -106,45 +123,86 @@ public class GameTime implements Parcelable {
 
     //////////GETTERS & SETTERS//////////
 
-
+    /**
+     * An accessor to get the integer within the variable totalTime
+     * @return the integer within totalTime
+     */
     public int getTotalTime() {
         return totalTime;
     }
 
+    /**
+     * An mutator write a integer into the totalTime variable
+     * @param totalTime an integer for the totalTime variable
+     */
     public void setTotalTime(int totalTime) {
         this.totalTime = totalTime;
     }
 
+    /**
+     * An accessor to get the integer within the variable dayTime
+     * @return the integer within dayTime
+     */
     public int getDayTime() {
         return dayTime;
     }
 
+    /**
+     * An mutator write a integer into the dayTime variable
+     * @param dayTime an integer for the dayTime variable
+     */
     public void setDayTime(int dayTime) {
         this.dayTime = dayTime;
     }
 
+    /**
+     * Describes the contents of the Gametime object
+     * @return an integer
+     */
     @Override
     public int describeContents() {
         return 0;
     }
 
+    /**
+     * A way to access the campFire object as a parcelable object
+     * @param dest where the parcelable information is being sent to
+     * @param flags determines how the object should be written
+     */
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(totalTime);
         dest.writeInt(dayTime);
     }
 
+    /**
+     * Retrieves a parcelable object and turns it into a GameTime object using a constructor
+     * @param parcel The object used for the GameTime object
+     */
     private GameTime(Parcel parcel) {
         totalTime = parcel.readInt();
         dayTime = parcel.readInt();
     }
 
+    /**
+     * Used to create a CREATOR object using GameTime, able to utilize the Parcel object
+     */
     public static final Parcelable.Creator<GameTime> CREATOR = new Creator<GameTime>() {
+        /**
+         * Creates a new GameTime object based on the Parcelable object passed in
+         * @param source the object used to create the parcelable object
+         * @return the GameTime object made from the source
+         */
         @Override
         public GameTime createFromParcel(Parcel source) {
             return new GameTime(source);
         }
 
+        /**
+         * Creates a new GameTime object array
+         * @param size the size of the array
+         * @return the GameTime array made from the method
+         */
         @Override
         public GameTime[] newArray(int size) {
             return new GameTime[size];

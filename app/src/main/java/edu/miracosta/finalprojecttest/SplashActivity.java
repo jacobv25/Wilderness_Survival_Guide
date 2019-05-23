@@ -1,5 +1,11 @@
 package edu.miracosta.finalprojecttest;
 
+/**
+ * SplashActivity.java: Creates a splash screen when booting up the program
+ * @author Gabriel Bactol & Jacob Valenzuela
+ * @since 4/23/19
+ */
+
 import android.content.Intent;
 import android.os.Bundle;
 

@@ -1,5 +1,10 @@
 package edu.miracosta.finalprojecttest.model.board_game;
 
+/**
+ * LevelOneValues.java: Pieces used to set up the board for the game
+ * @author Jacob Valenzuela and Gabriel Bactol
+ * @since 5/22/19
+ */
 public class LevelOneValues {
 
     public static BoardPiece STN_FRST = new BoardPiece(1, 0, 0, 0, 0, 0,

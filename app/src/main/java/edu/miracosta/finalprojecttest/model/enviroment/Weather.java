@@ -104,6 +104,10 @@ public class Weather {
 
     }
 
+    /**
+     * A list of the variables and values within the Weather object.
+     * @return A string containing the variables and their values of this Weather object
+     */
     @Override
     public String toString() {
         return "Weather{" +
@@ -114,26 +118,50 @@ public class Weather {
     }
 
     //////////Getters & Setters///////////
+    /**
+     * An accessor to get the integer within the variable temp
+     * @return the integer within temp
+     */
     public int getTemp() {
         return temp;
     }
 
+    /**
+     * An mutator write a string into the temp variable
+     * @param temp an integer for the temp variable
+     */
     public void setTemp(int temp) {
         this.temp = temp;
     }
 
+    /**
+     * An accessor to get the integer within the variable wind
+     * @return the integer within wind
+     */
     public int getWind() {
         return wind;
     }
 
+    /**
+     * An mutator write a string into the wind variable
+     * @param wind an integer for the wind variable
+     */
     public void setWind(int wind) {
         this.wind = wind;
     }
 
+    /**
+     * An accessor to get the integer within the variable fog
+     * @return the integer within fog
+     */
     public int getFog() {
         return fog;
     }
 
+    /**
+     * An mutator write a integer into the fog variable
+     * @param fog an integer for the fog variable
+     */
     public void setFog(int fog) {
         this.fog = fog;
     }

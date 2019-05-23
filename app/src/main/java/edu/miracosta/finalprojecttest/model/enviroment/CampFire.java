@@ -26,16 +26,26 @@ public class CampFire {
         isEmpty = false;
     }
 
+    /**
+     * A method that decreases the fuel by 1
+     */
     public void burn() {
 
         fuel = fuel - 1;
     }
 
+    /**
+     * A method that increases the fuel by 5
+     */
     public void stoke() {
 
         fuel = fuel + 5;
     }
 
+    /**
+     * A list of the variables and values within the CampFire object.
+     * @return A string containing the variables and their values of this campFire object
+     */
     @Override
     public String toString() {
         return "CampFire{" +
@@ -44,10 +54,18 @@ public class CampFire {
     }
 
     /////////Setters & Getters/////////
+    /**
+     * A method that returns the amount of fuel within the campFire object
+     * @return the integer within the fuel variable
+     */
     public int getFuel() {
         return fuel;
     }
 
+    /**
+     * A mutator that sets the amount of fuel within the campFire object
+     * @param fuel The amount of fuel, or integer, to store into the fuel integer
+     */
     public void setFuel(int fuel) {
         this.fuel = fuel;
     }
