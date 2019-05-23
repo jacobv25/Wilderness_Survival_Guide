@@ -455,15 +455,15 @@ public class PlayActivity extends AppCompatActivity {
         //Set the Temperature
         if (player.getTemperature() == 0) {
             //playerTempProgressBar.setVisibility(View.INVISIBLE);
-            afflictionTempTextView.setVisibility(View.VISIBLE);
+            //if (afflictionTempTextView.isCursorVisible()) {
+                afflictionTempTextView.setVisibility(View.VISIBLE);
+            //}
         }
         else {
             //playerTempProgressBar.setVisibility(View.VISIBLE);
             afflictionTempTextView.setVisibility(View.INVISIBLE);
-            getDrawable(R.drawable.circular_progress_bar_black).setVisible(true, true);
+            //getDrawable(R.drawable.circular_progress_bar_black).setVisible(true, true);
         }
-
-
         //Set the Hunger
         if (player.getHunger() == 0) {
             //playerHungerProgressBar.setVisibility(View.INVISIBLE);
@@ -475,12 +475,9 @@ public class PlayActivity extends AppCompatActivity {
             afflictionHungerTextView.setVisibility(View.INVISIBLE);
         }
 
-
-
         //Set the thirst
         if (player.getThirst() == 0) {
             playerThirstProgressBar.setVisibility(View.INVISIBLE);
-            //Log.i("Jacob", "changing thirst progress bar");
             afflictionThirstTextView.setVisibility(View.VISIBLE);
         }
         else {
