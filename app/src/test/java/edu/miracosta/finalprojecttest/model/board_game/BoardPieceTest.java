@@ -127,7 +127,7 @@ public class BoardPieceTest {
     @Test
     public void setAnimals() {
         boardPieceTest.setAnimals(35);
-        assertEquals("Testing getAnimals method", 35, boardPieceTest.getAnimals());
+        assertEquals("Testing setAnimals method", 35, boardPieceTest.getAnimals());
     }
 
     @Test

@@ -26,7 +26,7 @@ public class ItemTest {
     @Test
     public void setImageName() {
         itemTest.setImageName("aFile.png");
-        assertEquals("Testing getImageName method", "aFile.png", itemTest.getImageName());
+        assertEquals("Testing setImageName method", "aFile.png", itemTest.getImageName());
     }
 
     @Test
@@ -48,6 +48,6 @@ public class ItemTest {
     @Test
     public void setCount() {
         itemTest.setCount(20);
-        assertEquals("Testing getCount method", 20, itemTest.getCount());
+        assertEquals("Testing setCount method", 20, itemTest.getCount());
     }
 }

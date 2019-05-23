@@ -29,7 +29,7 @@ public class CampFireTest {
     @Test
     public void stoke() {
         campFireTest.stoke();
-        assertEquals("Testing burn method", 15, campFireTest.getFuel());
+        assertEquals("Testing stoke method", 15, campFireTest.getFuel());
     }
 
     @Test
@@ -37,17 +37,17 @@ public class CampFireTest {
         String expected =  "CampFire{" +
                 "fuel=" + 10 +
                 '}';
-        assertEquals("Testing burn method", expected, campFireTest.toString());
+        assertEquals("Testing toString method", expected, campFireTest.toString());
     }
 
     @Test
     public void getFuel() {
-        assertEquals("Testing burn method", 10, campFireTest.getFuel());
+        assertEquals("Testing getFuel method", 10, campFireTest.getFuel());
     }
 
     @Test
     public void setFuel() {
         campFireTest.setFuel(20);
-        assertEquals("Testing burn method", 20, campFireTest.getFuel());
+        assertEquals("Testing setFuel method", 20, campFireTest.getFuel());
     }
 }

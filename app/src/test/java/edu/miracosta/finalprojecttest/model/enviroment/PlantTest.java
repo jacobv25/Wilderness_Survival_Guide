@@ -48,6 +48,6 @@ public class PlantTest {
     @Test
     public void setPlantImage() {
         plantTest.setPlantImage("aFile.png");
-        assertEquals("Testing getPlantImage method", "aFile.png", plantTest.getPlantImage());
+        assertEquals("Testing setPlantImage method", "aFile.png", plantTest.getPlantImage());
     }
 }
